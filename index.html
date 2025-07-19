@@ -1,0 +1,445 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<!-- head -->
+<head>
+  <script>
+    (function () {
+        var a_idx = 0;
+        window.onclick = function (event) {
+            var a = new Array("✨", "🤖", "🥳", "👋", "🦾", "🐽");
+
+            var heart = document.createElement("b");
+            heart.onselectstart = new Function('event.returnValue=false');
+
+            document.body.appendChild(heart).innerHTML = a[a_idx];
+            a_idx = (a_idx + 1) % a.length;
+            heart.style.cssText = "position: fixed;left:-100%;";
+
+            var f = 16, 
+                x = event.clientX - f / 2, 
+                y = event.clientY - f,
+                c = randomColor(), 
+                a = 1,
+                s = 1.2; 
+
+            var timer = setInterval(function () { 
+                if (a <= 0) {
+                    document.body.removeChild(heart);
+                    clearInterval(timer);
+                } else {
+                    heart.style.cssText = "font-size:16px;cursor: default;position: fixed;color:" +
+                        c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +
+                        s + ");";
+
+                    y--;
+                    a -= 0.016;
+                    s += 0.002;
+                }
+            }, 15)
+
+        }
+        function randomColor() {
+
+            return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math
+            .random() * 255)) + ")";
+
+        }
+    }());
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-66DNLPJ6PY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-66DNLPJ6PY');
+  </script>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Lintao Zheng</title>
+  
+  <meta name="author" content="Lintao Zheng">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="icon" type="image/png" href="images/icon.png">
+</head>
+
+<!-- bib hide -->
+<script type="text/javascript">
+  function hideshow(which){
+  if (!document.getElementById)
+  return
+  if (which.style.display=="block")
+  which.style.display="none"
+  else
+  which.style.display="block"
+  }
+</script>
+
+<!-- body -->
+<body>
+  <!-- self-intro -->
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:0px">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr style="padding:0px">
+            <td style="padding:2%;width:55%;vertical-align:middle">
+              <p style="text-align:center">
+                <name>Lintao Zheng</name>
+              </p>
+              <p style="text-align: justify">
+              <intro>
+                I am currently a second-year master's student in Robotics at <a href="https://www.upenn.edu/">the University of Pennsylvania (UPenn)</a>.
+                <br>
+                <br>
+                My research experience includes contributing to robot planning and control under uncertainty at the <a href="https://www.grasp.upenn.edu/research-groups/figueroa-robotics-lab/">UPenn Figueroa Robotics Lab</a> with Prof. Nadia Figueroa, and developing a teleoperation forklift system at the <a href="https://xlab.upenn.edu/">Penn xLab</a> with Prof. Rahul Mangharam.
+                <br>
+                <br>
+                Previously, I also gained significant experience in sensor fusion and autonomous robot vehicles, including developing a Doppler radar-based speed detection system and line-following robot vehicles during my undergraduate studies at the <a href="https://www.nottingham.edu.cn/en/index.aspx">University of Nottingham Ningbo China (UNNC)</a>, as well as designing and building a teleoperated robot with multimodal sensors at UPenn.
+                <br>
+                <br>
+                My primary research interests involve <b>robot learning</b> and <b>AI</b>, especially in <b>perception-based reinforcement learning, imitation learning, and uncertainty-aware learning frameworks</b>, aiming to enable robots to autonomously acquire adaptive, robust, and intelligent behaviors through embodied interactions in complex real-world scenarios.
+
+                </intro>
+              <p style="text-align:center">
+                <a href="mailto:zer1tle@seas.upenn.edu" target="_blank">Email</a> &nbsp/&nbsp
+                <!-- <a href="https://scholar.google.com/citations?user=Inr-6rEAAAAJ" target="_blank">Google Scholar</a> &nbsp/&nbsp -->
+                <a href="https://github.com/Lintao-Zheng" target="_blank">Github</a>&nbsp/&nbsp
+                <a href="https://www.linkedin.com/in/lintao-zheng-411067336/" target="_blank">LinkedIn</a>&nbsp
+              </p>
+            </td>
+            <td style="padding:0%; width:26%; max-width:26%;"> <!-- move the photo a bit left -->
+              <br>
+              <!-- <br> -->
+              <img style="padding:1%; width:100%; max-width:80%;  display: block; margin-left: auto; margin-right: auto; " alt="profile photo" src="images/Lintao.png" class="hoverZoomLink">
+              <!-- <a href="https://hits.seeyoufarm.com" target="_blank">
+                <img 
+                  src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgeng-haoran.github.io&count_bg=%23FF8400&title_bg=%23545353&icon=tableau.svg&icon_color=%23F3F209&title=hits&edge_flat=false" 
+                  style="display: block; margin-left: auto; margin-right: auto; width: 55%;"/>
+              </a> -->
+            </td>
+  
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    </tr>
+  </tbody></table>
+
+  <!-- News -->
+  <!-- <table style="width:90%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <heading>News</heading>
+    <br>
+    <td style="padding:0px;width:100%;vertical-align:middle">
+    <p>
+      <li>[2024/09] 🎉 Three papers get accepted by CoRL 2024, of which RAM is selected as <b><font color='red'>Oral Presentation</font></b> .</li>
+      <li>[2024/07] SAGE🌿 won the <b><font color='red'>Best Paper Award</font></b> at RSS 2024 SemRob Workshop</li>
+      <li>[2024/06] I won the <b><font color='red'>Yunfan Award</font></b> and was named as Rising Star at the <a href="https://www.worldaic.com.cn/" target="_blank">World Artificial Intelligence Conference</a> (top 15 early career Chinese AI researchers)! I am the only undergraduate student to win this award so far. </li>
+      <li>[2024/05] 🎉 SAGE gets accepted to RSS 2024.</li>
+      <li>[2024/03] I am honored to receive the <b><font color='red'>Berkeley Fellowship Award</font></b> and <b><font color='red'>Stanford Graduate Fellowship Award</font></b>.</li>
+      <li>[2023/12] Excited to announce <a href="https://simulately.wiki/" target="_blank">Simulately</a>🤖, a go-to toolkit for robotics researchers navigating diverse simulators!</li>
+      <li>[2023/12] I'm honored to be selected as one of the <b><font color='red'>Person of the Year of Peking University</font></b>.</li>
+      <li>[2023/10] I gave an Oral Presentation on UniDexGrasp++ at ICCV 2023.</li>
+      <li>[2023/10] 🎉 UniDexGrasp++ is selected as <b><font color='red'>Best Paper Finalist</font></b> at ICCV 2023.</li>
+      <li>[2023/07] 🎉 Two papers get accepted to ICCV 2023 with UniDexGrasp++ receiving final reviews of <b><font color='red'>all strong accepts (the highest ratings)</font></b>.</li>
+      <li>[2023/07] 🎉 One paper gets accepted to Machine Learning Journal.</li>
+      <li>[2023/03] 🎉 GAPartNet is selected as a <b><font color='red'>Highlight</font></b> at CVPR 2023 (Top 10% of accepted papers, top 2.5% of submissions).</li>
+      <li>[2023/02] 🎉 Three papers get accepted to CVPR 2023 with GAPartNet receiving final reviews of <b><font color='red'>all accepts (the highest ratings)</font></b>.</li>
+      <li>[2023/01] 🎉 One paper gets accepted to ICRA 2023.</li>
+    </p> 
+  </td>
+  </tr>
+  </tbody></table> -->
+
+  <!-- Publication -->
+  <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <br>
+    <heading>Research Projects</heading>
+    <br>
+
+    <!-- SpatialFusion -->
+    
+    <!-- <tr onmouseout="malle_stop()" onmouseover="malle_start()">
+      <td style="padding:20px;width:70%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='malle_image'>
+            <img src='images/poster.png' width="220"></div>
+          <img src='images/poster.png' width="220">
+        </div>
+        <script type="text/javascript">
+          function malle_start() {
+            document.getElementById('malle_image').style.opacity = "1";
+          }
+          function malle_stop() {
+            document.getElementById('malle_image').style.opacity = "0";
+          }
+          malle_stop()
+    </script>
+      </td> -->
+
+      <td style="padding:20px;width:30%;vertical-align:middle">
+        <a href="" target="_blank">
+          <papertitle>Temporal Logic Robotics Under Perception Uncertainty
+          </papertitle>
+        </a>
+        <br>
+        <!-- Mengqiu Wang, Zhiwei Zhang, <strong>Xinxin Zhang</strong>, Ruoyan Dai, Zhenghui Wang, Zeyao Chen, Lixin Lei, Zhenxing Li, Xudong Zhao, Qianjin Guo* -->
+        <!-- <br> -->
+        <!-- <a href="https://arxiv.org/abs/2407.04689">Paper</a> /
+        <a href="https://yxkryptonite.github.io/RAM/">Project</a> / 
+        <a href="https://github.com/yxKryptonite/RAM_code">Code</a> /
+        <a href="javascript:hideshow(document.getElementById('ram'))">Bibtex</a>
+        <br> -->
+        <em><strong>Research Assistant at Figueroa Robotics Lab, advised by <b>Prof. Nadia Figueroa</b></strong></em>
+        <p>
+          1. Developed a temporal logic-based planning and control framework for interactive robotic tasks.
+          <br>
+          2. Deployed a hierarchical structure: used Reactive Temporal Logic (RTL) for discrete task-level decisions (200 Hz) and time-varying CBF/CLF in Signal Temporal Logic (STL) for continuous motion control (1000 Hz), ensuring safety under sensor uncertainty.
+          <br> 
+          3. Incorporated perception uncertainty to enable robust performance in diverse real-world scenarios.
+        </p>
+      </td>
+    </tr>
+
+    <!-- SpaOmicsVAE -->
+
+    <!-- <tr onmouseout="malle_stop()" onmouseover="malle_start()">
+      <td style="padding:20px;width:30%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='malle_image'>
+            <img src='images/poster.png' width="220"></div>
+          <img src='images/poster.png' width="220">
+        </div>
+        <script type="text/javascript">
+          function malle_start() {
+            document.getElementById('malle_image').style.opacity = "1";
+          }
+          function malle_stop() {
+            document.getElementById('malle_image').style.opacity = "0";
+          }
+          malle_stop()
+    </script>
+      </td> -->
+      <td style="padding:20px;width:30%;vertical-align:middle">
+        <a href="" target="_blank">
+          <papertitle>Teleoperated Forklift System Integration
+          </papertitle>
+        </a>
+        <br>
+        <!-- Mengqiu Wang, Zhiwei Zhang, <strong>Xinxin Zhang</strong>, Ruoyan Dai, Zhenghui Wang, Zeyao Chen, Lixin Lei, Zhenxing Li, Xudong Zhao, Qianjin Guo* -->
+        <!-- <br> -->
+        <!-- <a href="https://arxiv.org/abs/2407.04689">Paper</a> /
+        <a href="https://yxkryptonite.github.io/RAM/">Project</a> / 
+        <a href="https://github.com/yxKryptonite/RAM_code">Code</a> /
+        <a href="javascript:hideshow(document.getElementById('ram'))">Bibtex</a>
+        <br> -->
+        <em><strong>Research Assistant at xLab, advised by <b>Prof. Rahul Mangharam</b></strong></em>
+        <p>
+          1. Utilized the CAN protocol to establish communication between the Jetson and the forklift.
+          <br>
+          2. Translated joystick inputs on the Jetson into actionable commands for forklift control.
+          <br> 
+          3. Designed and fabricated a custom base using 3D printing and laser cutting to securely mount the Jetson, sensors, and power system.
+        </p>
+      </td>
+    </tr>
+
+    <!-- SpaOmicsVAE -->
+
+    <!-- <tr onmouseout="malle_stop()" onmouseover="malle_start()">
+      <td style="padding:20px;width:30%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='malle_image'>
+            <img src='images/poster.png' width="220"></div>
+          <img src='images/poster.png' width="220">
+        </div>
+        <script type="text/javascript">
+          function malle_start() {
+            document.getElementById('malle_image').style.opacity = "1";
+          }
+          function malle_stop() {
+            document.getElementById('malle_image').style.opacity = "0";
+          }
+          malle_stop()
+    </script>
+      </td> -->
+      <td style="padding:20px;width:30%;vertical-align:middle">
+        <a href="" target="_blank">
+          <papertitle>Teleoperation Robot Design and Competition Project
+          </papertitle>
+        </a>
+        <br>
+        <!-- Mengqiu Wang, Zhiwei Zhang, <strong>Xinxin Zhang</strong>, Ruoyan Dai, Zhenghui Wang, Zeyao Chen, Lixin Lei, Zhenxing Li, Xudong Zhao, Qianjin Guo* -->
+        <!-- <br> -->
+        <!-- <a href="https://arxiv.org/abs/2407.04689">Paper</a> /
+        <a href="https://yxkryptonite.github.io/RAM/">Project</a> / 
+        <a href="https://github.com/yxKryptonite/RAM_code">Code</a> /
+        <a href="javascript:hideshow(document.getElementById('ram'))">Bibtex</a>
+        <br> -->
+        <em><strong>Team Leader, Group Project</strong></em>
+        <p>
+          1. Developed a 3-DOF teleoperated robot using Itsy Bitsy and Arduino for precise servo control.
+          <br>
+          2. Designed the Waldo system for smooth teleoperation, including servo selection and custom coding.
+          <br> 
+          3. Led the full development cycle across mechanical, circuit, and software design.
+          <br>
+          4. Integrated sensors (ultrasonic, IR, force) for obstacle detection and environmental interaction.
+          <br>
+          5. Optimized control algorithms with PID and custom logic to boost efficiency and accuracy.
+        </p>
+      </td>
+    </tr>
+
+  </tbody></table>
+
+
+    <!-- Poster -->
+    <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <br>
+      <heading>Poster</heading>
+      <br>
+  
+      <tr onmouseout="malle_stop()" onmouseover="malle_start()">
+        <td style="padding:20px;width:30%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='malle_image'>
+              <img src='images/poster.png' width="220"></div>
+            <img src='images/poster.png' width="220">
+          </div>
+          <script type="text/javascript">
+            function malle_start() {
+              document.getElementById('malle_image').style.opacity = "1";
+            }
+            function malle_stop() {
+              document.getElementById('malle_image').style.opacity = "0";
+            }
+            malle_stop()
+      </script>
+        </td>
+  
+        <td style="padding:20px;width:70%;vertical-align:middle">
+          <a href="pdf/Poster_xinxinzhang.pdf" target="_blank">
+            <papertitle>Image-Guided Uterine Fibroid Modelling, Surgery Planning, and Intervention
+            </papertitle>
+          </a>
+          <br>
+         Hanxiao Zhang, Junhao Wang, Haojie Han, Taiyu Han, Yaoyu Liu, <strong>Xinxin Zhang</strong>
+          <br>
+          <a href="pdf/Poster_xinxinzhang.pdf">PDF</a>
+          <br>
+          <p>
+          This project integrates deep learning for 3D reconstruction and segmentation with optimized surgical path planning to improve fibroid localization during laparoscopic myomectomy, enhancing precision and patient outcomes in minimally invasive gynaecological surgery. 
+          </p>
+        </td>
+      </tr>
+    </tbody></table> -->
+
+ 
+    <!-- Education -->
+    <table width="100%" align="center" border="0" cellpadding="10"><tbody>
+      <br>
+          <heading>Education</heading>
+      <br>
+
+      <tr>
+        <td style="padding-left:18px;padding-right:20px;width:20%;vertical-align:middle"><img src="images/Upenn_logo.jpg", width="108"></td>
+        <td width="100%" valign="center">
+          <strong><a href="https://www.upenn.edu/" target="_blank"><papertitle>University of Pennsylvania (UPenn)</papertitle> </a></strong>
+          <br>2024.8 - 2026.5
+          <br>Electrical Engineering, MSE
+          <br> Advisor: <a href="https://www.grasp.upenn.edu/research-groups/figueroa-robotics-lab/" target="_blank">Prof. Nadia Figueroa</a> and <a href="https://xlab.upenn.edu/">Prof. Rahul Mangharam</a> 
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding-left:18px;padding-right:20px;width:20%;vertical-align:middle"><img src="images/UNNC_logo.jpg", width="108"></td>
+        <td width="100%" valign="center">
+          <strong><a href="https://www.nottingham.edu.cn/" target="_blank"><papertitle>University of Notingham Ningbo China</papertitle> </a></strong>
+          <br>2024.9 - 2024.6
+          <br>BEng Hons Electrical and Electronic Engineering
+          <br>GPA: 3.9/4.0
+          <br> Advisor: <a href="https://www.nottingham.edu.cn/en/science-engineering/people/inspiring-people/adam-rushworth.aspx" target="_blank">Prof. Adam Rushworth</a>
+        </td>
+      </tr>
+
+    </tbody></table>
+
+  <!-- Experience -->
+  <table width="100%" align="center" border="0" cellpadding="10"><tbody>
+      <br>
+          <heading>Experience</heading>
+      <br>
+      <tr>
+        <td style="padding-left:18px;padding-right:20px;width:20%;vertical-align:middle"><img src="images/Upenn_logo.jpg", width="108"></td>
+        <td width="100%" valign="center">
+          <strong><a href="https://www.upenn.edu/" target="_blank"><papertitle>University of Pennsylvania (UPenn)</papertitle> </a></strong>
+          <br>2025.2 - Present
+          <br>Research Assistant
+          <br> Advisor: <a href="https://www.grasp.upenn.edu/research-groups/figueroa-robotics-lab/" target="_blank">Prof. Nadia Figueroa</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding-left:18px;padding-right:20px;width:20%;vertical-align:middle"><img src="images/Upenn_logo.jpg", width="108"></td>
+        <td width="100%" valign="center">
+          <strong><a href="https://www.upenn.edu/" target="_blank"><papertitle>University of Pennsylvania (UPenn)</papertitle> </a></strong>
+          <br>2024.9 - 2025.2
+          <br>Research Assistant
+          <br> Advisor: <a href="https://xlab.upenn.edu/">Prof. Rahul Mangharam</a> 
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding-left:18px;padding-right:20px;width:20%;vertical-align:middle"><img src="images/UNNC_logo.jpg", width="108"></td>
+        <td width="100%" valign="center">
+          <strong><a href="https://www.nottingham.edu.cn/" target="_blank"><papertitle>University of Notingham Ningbo China (UNNC)</papertitle> </a></strong>
+          <br>2023.6 - 2024.6
+          <br>Research Assistant
+          <br> Advisor: <a href="https://www.nottingham.edu.cn/en/science-engineering/people/inspiring-people/adam-rushworth.aspx" target="_blank">Prof. Adam Rushworth</a>
+        </td>
+      </tr> 
+
+      <tr>
+        <td style="padding-left:18px;padding-right:20px;width:20%;vertical-align:middle"><img src="images/Healthy_Photon_logo.jpg", width="108"></td>
+        <td width="100%" valign="center">
+          <strong><a href="https://en.healthyphoton.com/" target="_blank"><papertitle>Healthy Photon</papertitle> </a></strong>
+          <br>2022.5 - 2022.7
+          <br>Assistant Embedded Software Engineer
+        </td>
+      </tr> 
+
+      <tr>
+        <td style="padding-left:18px;padding-right:20px;width:20%;vertical-align:middle"><img src="images/HIKVISION_logo.png", width="108"></td>
+        <td width="100%" valign="center">
+          <strong><a href="https://www.hikvision.com/us-en/" target="_blank"><papertitle>Hikvision</papertitle> </a></strong>
+          <br>2021.6 - 2021.8
+          <br>Device Engineer
+        </td>
+      </tr> 
+   
+  </tbody></table>
+
+
+  <!-- Aknowledgements -->
+  <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr>
+      <!-- <br> -->
+      <!-- <br> -->
+      <hr>
+        <p style="text-align:center">
+          This homepage is designed based on <a href="https://jonbarron.info/">Jon Barron</a>'s website and deployed on <a href="https://pages.github.com/">Github Pages</a>. Last updated: Jul. 19, 2025
+
+          <br>
+          © 2025 Lintao Zheng
+        </p>
+      </td>
+      </tr>
+  </tbody></table>
+
+</body>
+</html>
