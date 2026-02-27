@@ -203,7 +203,6 @@
           3. Modeled two complementary uncertainty sources to improve robustness and safety:<br> 
 &nbsp;&nbsp;&nbsp;&nbsp;(i) <b>Spatial uncertainty</b>: represented target position as a distribution to guide MPPI toward the belief rather than a single detection;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;(ii) <b>Detection confidence</b>: injected YOLO confidence into the cost to discourage trajectories through high-uncertainty regions.<br>
-		  <br>
 		  4. Added risk-averse and exploration costs to trade off safety and information gathering in uncertain environments.
 		  <br>
 		  5. Accelerated sampling and cost evaluation with JAX and maintained a stable 100 Hz control loop; experiments showed reliable planning and execution under glare/occlusion, missed detections, and increased noise, improving tracking accuracy and reducing failure rates.
