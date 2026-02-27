@@ -277,7 +277,6 @@
           3. Designed grasping and stacking strategies for both static and dynamic targets:<br> 
 &nbsp;&nbsp;&nbsp;&nbsp;(i) Static grasping with coarse-to-fine detection and orientation selection, leveraging 7-DoF redundancy to maintain a stable wrist pose;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;(ii) Dynamic capture using a Jacobian-based joint-space sweeping policy with event-triggered grasping when the target enters a predefined capture region.<br>
-		  <br>
 		  4. Built a ROS-based sim/execution pipeline with RViz visualization and debugging, and deployed the same planning/control stack on the real Franka for reliable sim-to-real transfer.
 		  <br>
 		  5. Validated the system in both simulation and real hardware under perception noise and dynamic disturbances, winning the UPenn Pick-and-Place Challenge.
@@ -378,7 +377,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;(i) High-level: choose contact timing and target paddle normal/impact velocity to meet apex + region constraints.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;(ii) Mid-level: IK/velocity-IK + joint-space MPC (terminal constraints) to generate smooth, feasible reference trajectories.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;(iii) Low-level: torque tracking via joint-space PD + gravity compensation for stable execution.<br>
-		  <br> 
           3. Ran the full system in a 100 Hz closed loop and achieved smooth tracking; across diverse initial ball states, the robot stabilized the ball into a target region within 3–5 seconds and maintained periodic juggling.
         </p>
       </td>
