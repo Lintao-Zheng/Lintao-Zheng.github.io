@@ -339,12 +339,12 @@
         <br> -->
         <em><strong>Control & Optimization Project, advised by <b>Prof. Michael Posa</b> (Sep 2025 – Dec 2025)</strong></em>
         <p>
-          1. Built a MuJoCo simulation for high-speed dynamic juggling with a Franka Panda, incorporating ping-pong ball flight prediction and a contact model to enable first-time capture and sustained juggling.
+          1. Built a MuJoCo simulation for high-speed Franka Panda juggling with ball flight prediction + contact modeling for capture and sustained juggling.
           <br>
           2. Designed a three-layer control stack:<br> 
-&nbsp;&nbsp;&nbsp;&nbsp;(i) High-level: physics-based predictor that selects contact timing and computes desired paddle normal/impact velocity to satisfy apex and region constraints.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;(ii) Mid-level: IK/velocity-IK + joint-space MPC (with terminal constraints) to generate smooth, feasible reference trajectories.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;(iii) Low-level: torque control using joint-space PD with gravity compensation for stable execution.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(i) High-level: choose contact timing and target paddle normal/impact velocity to meet apex + region constraints.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(ii) Mid-level: IK/velocity-IK + joint-space MPC (terminal constraints) to generate smooth, feasible reference trajectories.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(iii) Low-level: torque tracking via joint-space PD + gravity compensation for stable execution.<br>
 		  <br> 
           3. Ran the full system in a 100 Hz closed loop and achieved smooth tracking; across diverse initial ball states, the robot stabilized the ball into a target region within 3–5 seconds and maintained periodic juggling.
         </p>
