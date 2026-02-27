@@ -198,13 +198,13 @@
         <p>
           1. Built an MPPI-based stochastic planning and control framework for online replanning and obstacle avoidance under perception uncertainty and environmental disturbances, optimized for real-time execution via parallel rollouts.
           <br>
-          2. Integrated a YOLO-based vision module and explicitly incorporated detection uncertainty into MPPI decision-making instead of relying on point estimates.
+          2. Integrated YOLO-based perception and injected detection uncertainty into MPPI instead of point estimates.
 		  <br> 
           3. Modeled two complementary uncertainty sources to improve robustness and safety:<br> 
 &nbsp;&nbsp;&nbsp;&nbsp;(i) <b>Spatial uncertainty</b>: represented target position as a distribution to guide MPPI toward the belief rather than a single detection;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;(ii) <b>Detection confidence</b>: injected YOLO confidence into the cost to discourage trajectories through high-uncertainty regions.<br>
 		  <br>
-		  4. Added risk-averse and exploration terms in the MPPI cost to balance safety and information gathering in uncertain environments.
+		  4. Added risk-averse and exploration costs to trade off safety and information gathering in uncertain environments.
 		  <br>
 		  5. Accelerated sampling and cost evaluation with JAX and maintained a stable 100 Hz control loop; experiments showed reliable planning and execution under glare/occlusion, missed detections, and increased noise, improving tracking accuracy and reducing failure rates.
         </p>
