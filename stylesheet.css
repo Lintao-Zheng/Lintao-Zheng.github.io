@@ -263,3 +263,11 @@ html { -webkit-text-size-adjust: 100%; }
     margin: 0 auto;
   }
 }
+
+.proj-text-only{
+  padding: 20px;
+  vertical-align: middle;
+}
+@media (max-width: 768px){
+  .proj-text-only{ padding: 12px !important; }
+}
