@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-  <!-- click emoji effect -->
   <script>
     (function () {
       var a_idx = 0;
@@ -10,7 +9,6 @@
         var a = new Array("✨", "🤖", "🥳", "👋", "🦾", "🐽");
         var heart = document.createElement("b");
         heart.onselectstart = new Function('event.returnValue=false');
-
         document.body.appendChild(heart).innerHTML = a[a_idx];
         a_idx = (a_idx + 1) % a.length;
         heart.style.cssText = "position: fixed;left:-100%;";
@@ -27,18 +25,14 @@
             document.body.removeChild(heart);
             clearInterval(timer);
           } else {
-            heart.style.cssText =
-              "font-size:16px;cursor: default;position: fixed;color:" + c +
-              ";left:" + x + "px;top:" + y + "px;opacity:" + opacity +
-              ";transform:scale(" + s + ");";
-
+            heart.style.cssText = "font-size:16px;cursor: default;position: fixed;color:" +
+              c + ";left:" + x + "px;top:" + y + "px;opacity:" + opacity + ";transform:scale(" + s + ");";
             y--;
             opacity -= 0.016;
             s += 0.002;
           }
         }, 15);
-      };
-
+      }
       function randomColor() {
         return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";
       }
@@ -66,281 +60,204 @@
 
 <body>
 
-  <!-- ===== Hero / Intro (Responsive) ===== -->
-  <div class="container">
-    <section class="hero">
+  <!-- self-intro -->
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
 
-      <div class="hero-photo">
-        <img src="images/Lintao.png" alt="profile photo">
-      </div>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr class="bio-inner-row" style="padding:0px">
 
-      <div class="hero-body">
-        <h1 class="hero-name">Lintao Zheng</h1>
+                <td class="bio-text-cell" style="padding:2%;width:55%;vertical-align:middle">
+                  <p style="text-align:center">
+                    <name>Lintao Zheng</name>
+                  </p>
 
-        <!-- Top icon bar -->
-        <div class="hero-links">
-          <a class="icon-link" href="mailto:zer1tle@seas.upenn.edu" target="_blank" aria-label="Email" title="Email">✉️</a>
-          <a class="icon-link" href="https://github.com/Lintao-Zheng" target="_blank" aria-label="GitHub" title="GitHub">💻</a>
-          <a class="icon-link" href="https://www.linkedin.com/in/lintao-zheng-411067336/" target="_blank" aria-label="LinkedIn" title="LinkedIn">🔗</a>
-          <!-- TODO: replace with your real CV path -->
-          <a class="icon-link" href="pdf/CV.pdf" target="_blank" aria-label="CV" title="CV">📄</a>
+                  <p style="text-align: justify">
+                    I am currently a second-year master's student in Robotics at
+                    <a href="https://www.upenn.edu/">the University of Pennsylvania (UPenn)</a>.
+                    I build end-to-end robotic systems that integrate perception uncertainty, state estimation, and real-time planning/control.
+                    Recently, I developed an uncertainty-aware MPPI framework accelerated with JAX for 100 Hz online replanning under noisy vision and disturbances.
+                    <br><br>
+                    My research experience includes contributing to robot planning and control under uncertainty at the
+                    <a href="https://figueroa.seas.upenn.edu/">UPenn Figueroa Robotics Lab</a> with
+                    <a href="https://nbfigueroa.github.io/">Prof. Nadia Figueroa</a>,
+                    and developing a teleoperation forklift system at the
+                    <a href="https://xlab.upenn.edu/">UPenn xLab</a> with
+                    <a href="https://xlab.upenn.edu/team/rahul/">Prof. Rahul Mangharam</a>.
+                    <br><br>
+                    Previously, I also gained significant experience in sensor fusion and autonomous robot vehicles, including developing a Doppler radar-based speed detection system and line-following robot vehicles during my undergraduate studies at the
+                    <a href="https://www.nottingham.edu.cn/en/index.aspx">University of Nottingham Ningbo China (UNNC)</a>,
+                    as well as designing and building a teleoperated robot with multimodal sensors at UPenn.
+                    <br><br>
+                    My primary research interests lie in <b>robot learning</b>, <b>optimal control</b> and <b>uncertainty-aware decision-making</b>, focusing on
+                    <b>learning-based motion planning, control, and perception</b>. I aim to develop <b>generalizable and uncertainty-aware frameworks</b> that integrate
+                    <b>learning, perception, and control</b> to achieve <b>safe, robust, and adaptive robotic autonomy</b> in complex real-world environments.
+                  </p>
 
-          <button class="links-toggle" type="button" aria-expanded="false" aria-controls="hero-links-text">More</button>
-        </div>
+                  <p style="text-align:center">
+                    <a href="mailto:zer1tle@seas.upenn.edu" target="_blank">Email</a> &nbsp/&nbsp
+                    <a href="https://github.com/Lintao-Zheng" target="_blank">Github</a>&nbsp/&nbsp
+                    <a href="https://www.linkedin.com/in/lintao-zheng-411067336/" target="_blank">LinkedIn</a>&nbsp/&nbsp
+                    <!-- TODO: replace with your real CV path -->
+                    <a href="pdf/CV.pdf" target="_blank">CV</a>
+                  </p>
+                </td>
 
-        <!-- Collapsible text links -->
-        <div id="hero-links-text" class="hero-links-text" hidden>
-          <a href="mailto:zer1tle@seas.upenn.edu" target="_blank">Email</a>
-          <span> / </span>
-          <a href="https://github.com/Lintao-Zheng" target="_blank">GitHub</a>
-          <span> / </span>
-          <a href="https://www.linkedin.com/in/lintao-zheng-411067336/" target="_blank">LinkedIn</a>
-          <span> / </span>
-          <a href="pdf/CV.pdf" target="_blank">CV</a>
-        </div>
+                <td class="bio-photo-cell" style="padding:0%; width:26%; max-width:26%;">
+                  <br>
+                  <img style="padding:1%; width:100%; max-width:80%; display:block; margin-left:auto; margin-right:auto;"
+                    alt="profile photo" src="images/Lintao.png" class="hoverZoomLink">
+                </td>
 
-        <div class="hero-intro">
-          <p>
-            I am currently a second-year master's student in Robotics at
-            <a href="https://www.upenn.edu/">the University of Pennsylvania (UPenn)</a>.
-            I build end-to-end robotic systems that integrate perception uncertainty, state estimation, and real-time planning/control.
-            Recently, I developed an uncertainty-aware MPPI framework accelerated with JAX for 100 Hz online replanning under noisy vision and disturbances.
-          </p>
+              </tr>
+            </tbody>
+          </table>
 
-          <p>
-            My research experience includes contributing to robot planning and control under uncertainty at the
-            <a href="https://figueroa.seas.upenn.edu/">UPenn Figueroa Robotics Lab</a> with
-            <a href="https://nbfigueroa.github.io/">Prof. Nadia Figueroa</a>,
-            and developing a teleoperation forklift system at the
-            <a href="https://xlab.upenn.edu/">UPenn xLab</a> with
-            <a href="https://xlab.upenn.edu/team/rahul/">Prof. Rahul Mangharam</a>.
-          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-          <p>
-            Previously, I also gained significant experience in sensor fusion and autonomous robot vehicles, including developing a Doppler radar-based speed detection system and line-following robot vehicles during my undergraduate studies at the
-            <a href="https://www.nottingham.edu.cn/en/index.aspx">University of Nottingham Ningbo China (UNNC)</a>, as well as designing and building a teleoperated robot with multimodal sensors at UPenn.
-          </p>
+  <!-- Research Projects (Publication style) -->
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr>
+        <td style="padding:0px">
 
-          <p>
-            My primary research interests lie in <b>robot learning</b>, <b>optimal control</b> and <b>uncertainty-aware decision-making</b>, focusing on
-            <b>learning-based motion planning, control, and perception</b>. I aim to develop <b>generalizable and uncertainty-aware frameworks</b> that integrate
-            <b>learning, perception, and control</b> to achieve <b>safe, robust, and adaptive robotic autonomy</b> in complex real-world environments.
-          </p>
-        </div>
-      </div>
+          <br>
+          <heading>Research Projects</heading>
+          <br>
 
-    </section>
-  </div>
+          <table class="pub-table">
+            <tbody>
 
-  <script>
-    (function () {
-      const btn = document.querySelector(".links-toggle");
-      const panel = document.getElementById("hero-links-text");
-      if (!btn || !panel) return;
+              <!-- Project 1 -->
+              <tr class="pub-item">
+                <td class="pub-img-wrap" style="padding:20px;width:30%;vertical-align:middle">
+                  <!-- TODO: replace placeholder with your image -->
+                  <img class="pub-thumb" src="images/placeholder.png" alt="project thumbnail">
+                </td>
 
-      btn.addEventListener("click", () => {
-        const expanded = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", String(!expanded));
-        panel.hidden = expanded;
-        btn.textContent = expanded ? "More" : "Less";
-      });
-    })();
-  </script>
+                <td class="pub-text" style="padding:20px;width:70%;vertical-align:middle">
+                  <p class="pub-title">
+                    <papertitle>Uncertainty-Aware MPPI Planning and Control for Robust Robotic Tasks</papertitle>
+                  </p>
+                  <p class="pub-meta">
+                    <em><strong>Research Assistant at Figueroa Robotics Lab, advised by <b>Prof. Nadia Figueroa</b></strong></em>
+                  </p>
+                  <p>
+                    1. Built an MPPI-based stochastic planning and control framework for online replanning and obstacle avoidance under perception uncertainty and environmental disturbances, optimized for real-time execution via parallel rollouts.<br>
+                    2. Integrated YOLO-based perception and injected detection uncertainty into MPPI instead of point estimates.<br>
+                    3. Modeled two complementary uncertainty sources to improve robustness and safety:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;(i) <b>Spatial uncertainty</b>: modeled target position as a distribution to guide MPPI toward the belief, not a single detection;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;(ii) <b>Detection confidence</b>: weighted the cost by YOLO confidence to avoid high-uncertainty regions.<br>
+                    4. Added risk-averse and exploration costs to trade off safety and information gathering in uncertain environments.<br>
+                    5. Accelerated sampling and cost evaluation with JAX and maintained a stable 100 Hz control loop; experiments showed reliable planning under glare/occlusion, missed detections, and noise.
+                  </p>
+                </td>
+              </tr>
 
-  <!-- ===== Research Projects ===== -->
-  <div class="container">
-    <h2 class="section-title">Research Projects</h2>
+              <!-- Project 2 -->
+              <tr class="pub-item">
+                <td class="pub-img-wrap" style="padding:20px;width:30%;vertical-align:middle">
+                  <img class="pub-thumb" src="images/placeholder.png" alt="project thumbnail">
+                </td>
+                <td class="pub-text" style="padding:20px;width:70%;vertical-align:middle">
+                  <p class="pub-title">
+                    <papertitle>Teleoperated Forklift System Integration</papertitle>
+                  </p>
+                  <p class="pub-meta">
+                    <em><strong>Research Assistant at xLab, advised by <b>Prof. Rahul Mangharam</b></strong></em>
+                  </p>
+                  <p>
+                    1. Utilized the CAN protocol to establish communication between the Jetson and the forklift.<br>
+                    2. Built Bluetooth communication to translate joystick inputs on the Jetson to forklift control commands.<br>
+                    3. Achieved full remote forklift control including driving, steering and lifting.<br>
+                    4. Designed and fabricated a 3D-printed and laser-cut chassis to mount the Jetson, power system, and communication hardware with a stable top-mounted camera system.
+                  </p>
+                </td>
+              </tr>
 
-    <div class="projects">
+              <!-- Project 3 -->
+              <tr class="pub-item">
+                <td class="pub-img-wrap" style="padding:20px;width:30%;vertical-align:middle">
+                  <img class="pub-thumb" src="images/placeholder.png" alt="project thumbnail">
+                </td>
+                <td class="pub-text" style="padding:20px;width:70%;vertical-align:middle">
+                  <p class="pub-title">
+                    <papertitle>Penn Robotics Pick-and-Place Challenge (Champion) — Dynamic Pick-and-Place Control System (Sep 2025 – Dec 2025)</papertitle>
+                  </p>
+                  <p class="pub-meta">
+                    <em><strong>Team Leader, Group Project</strong></em>
+                  </p>
+                  <p>
+                    1. Built an end-to-end pick-and-place system for a Franka Panda 7-DoF arm by deriving the kinematic model with DH parameters and implementing FK, Jacobian, and IK.<br>
+                    2. Implemented AprilTag-based 6-DoF pose estimation and calibrated camera–end-effector–base transformations; applied bias compensation for better localization.<br>
+                    3. Designed strategies for static and dynamic targets with event-triggered grasping.<br>
+                    4. Built a ROS-based sim/execution pipeline and deployed the same stack on the real Franka for sim-to-real transfer.<br>
+                    5. Validated in both simulation and hardware under noise/disturbances; won the challenge.
+                  </p>
+                </td>
+              </tr>
 
-      <article class="proj">
-        <h3 class="proj-title">Uncertainty-Aware MPPI Planning and Control for Robust Robotic Tasks</h3>
-        <div class="proj-meta"><b>Research Assistant</b> · Figueroa Robotics Lab · Advised by <b>Prof. Nadia Figueroa</b></div>
-        <ul class="proj-list">
-          <li>Built an MPPI-based stochastic planning and control framework for online replanning and obstacle avoidance under perception uncertainty and disturbances, optimized via parallel rollouts.</li>
-          <li>Integrated YOLO-based perception and injected detection uncertainty into MPPI instead of point estimates.</li>
-          <li>Modeled two complementary uncertainty sources:
-            <ul>
-              <li><b>Spatial uncertainty</b>: modeled target position as a distribution to guide MPPI toward the belief, not a single detection.</li>
-              <li><b>Detection confidence</b>: weighted the cost by YOLO confidence to avoid high-uncertainty regions.</li>
-            </ul>
-          </li>
-          <li>Added risk-averse and exploration costs to trade off safety and information gathering.</li>
-          <li>Accelerated sampling and cost evaluation with JAX and maintained a stable 100 Hz control loop; improved tracking accuracy and reduced failure rates under glare/occlusion and missed detections.</li>
-        </ul>
-      </article>
+              <!-- 你后面其它项目可以照这个格式继续加 -->
 
-      <article class="proj">
-        <h3 class="proj-title">Teleoperated Forklift System Integration</h3>
-        <div class="proj-meta"><b>Research Assistant</b> · xLab · Advised by <b>Prof. Rahul Mangharam</b></div>
-        <ul class="proj-list">
-          <li>Used CAN protocol to establish communication between the Jetson and the forklift.</li>
-          <li>Built Bluetooth communication to translate joystick inputs on the Jetson into control commands.</li>
-          <li>Achieved full remote forklift control including driving, steering, and lifting.</li>
-          <li>Designed and fabricated a chassis to mount the Jetson, power system, and communication hardware with a stable top-mounted camera system.</li>
-        </ul>
-      </article>
+            </tbody>
+          </table>
 
-      <article class="proj">
-        <h3 class="proj-title">Penn Robotics Pick-and-Place Challenge (Champion) — Dynamic Pick-and-Place Control System</h3>
-        <div class="proj-meta"><b>Team Leader</b> · Group Project · Sep 2025 – Dec 2025</div>
-        <ul class="proj-list">
-          <li>Built an end-to-end pick-and-place system for a Franka Panda 7-DoF arm with FK, Jacobian, and IK for autonomous grasping and stacking in a shared workspace.</li>
-          <li>Implemented AprilTag-based 6-DoF pose estimation and calibrated camera–end-effector–base transformations; applied bias compensation to improve real-robot localization stability.</li>
-          <li>Designed strategies for static and dynamic targets (coarse-to-fine static grasping; Jacobian-based joint-space sweeping + event-triggered dynamic capture).</li>
-          <li>Built a ROS-based sim/execution pipeline with RViz visualization/debugging; deployed the same stack on real Franka for sim-to-real transfer.</li>
-          <li>Validated under perception noise and dynamic disturbances; won the UPenn Pick-and-Place Challenge.</li>
-        </ul>
-      </article>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-      <article class="proj">
-        <h3 class="proj-title">Teleoperation Robot Design and Competition Project</h3>
-        <div class="proj-meta"><b>Team Leader</b> · Group Project</div>
-        <ul class="proj-list">
-          <li>Developed a 3-DOF teleoperated robot using Itsy Bitsy and Arduino for precise servo control.</li>
-          <li>Designed the Waldo system for smooth teleoperation, including servo selection and custom coding.</li>
-          <li>Led the development cycle across mechanical, circuit, and software design.</li>
-          <li>Integrated sensors (ultrasonic, IR, force) for obstacle detection and interaction.</li>
-          <li>Optimized control algorithms with PID and custom logic to boost efficiency and accuracy.</li>
-        </ul>
-      </article>
-
-      <article class="proj">
-        <h3 class="proj-title">Multi-Sensor Fusion Odometry on Uneven Terrain</h3>
-        <div class="proj-meta"><b>Research Assistant</b> · UNNC · Advised by <b>Prof. Adam Rushworth</b></div>
-        <ul class="proj-list">
-          <li>Designed a robust odometry pipeline for wheeled robots on uneven terrain to mitigate vibration- and slip-induced drift.</li>
-          <li>Fused LiDAR, camera, and IMU measurements with a Kalman filter to reduce localization error.</li>
-          <li>Calibrated and benchmarked odometry using AprilTag-based pose estimates as an external reference.</li>
-        </ul>
-      </article>
-
-      <article class="proj">
-        <h3 class="proj-title">MPC-Based High-Speed Dynamic Juggling with a Franka Panda</h3>
-        <div class="proj-meta"><b>Control & Optimization Project</b> · Advised by <b>Prof. Michael Posa</b> · Sep 2025 – Dec 2025</div>
-        <ul class="proj-list">
-          <li>Built a MuJoCo simulation for high-speed Franka juggling with ball flight prediction and contact modeling.</li>
-          <li>Designed a three-layer control stack (high-level timing/impact, mid-level IK/MPC, low-level torque tracking via PD + gravity compensation).</li>
-          <li>Ran a 100 Hz closed loop and stabilized the ball into a target region within seconds across diverse initial states.</li>
-        </ul>
-      </article>
-
-    </div>
-  </div>
-
-  <!-- ===== Education ===== -->
-  <div class="container">
-    <h2 class="section-title">Education</h2>
-
-    <table width="100%" align="center" border="0" cellpadding="10">
-      <tbody>
-        <tr>
-          <td style="padding-left:18px;padding-right:20px;width:20%;vertical-align:middle">
-            <img src="images/Upenn_logo.jpg" width="108" alt="UPenn logo">
-          </td>
-          <td width="100%" valign="center">
-            <strong><a href="https://www.upenn.edu/" target="_blank">University of Pennsylvania (UPenn)</a></strong><br>
-            2024.8 - 2026.5<br>
-            Electrical Engineering, MSE<br>
-            Advisor: <a href="https://nbfigueroa.github.io/" target="_blank">Prof. Nadia Figueroa</a> and
-            <a href="https://xlab.upenn.edu/team/rahul/" target="_blank">Prof. Rahul Mangharam</a>
-          </td>
-        </tr>
-
-        <tr>
-          <td style="padding-left:18px;padding-right:20px;width:20%;vertical-align:middle">
-            <img src="images/UNNC_logo.jpg" width="108" alt="UNNC logo">
-          </td>
-          <td width="100%" valign="center">
-            <strong><a href="https://www.nottingham.edu.cn/" target="_blank">University of Nottingham Ningbo China (UNNC)</a></strong><br>
-            <!-- TODO: fix the year range -->
-            2020.9 - 2024.6<br>
-            BEng Hons Electrical and Electronic Engineering<br>
-            GPA: 3.9/4.0<br>
-            Advisor: <a href="https://www.nottingham.edu.cn/en/science-engineering/people/inspiring-people/adam-rushworth.aspx" target="_blank">Prof. Adam Rushworth</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- ===== Experience ===== -->
-  <div class="container">
-    <h2 class="section-title">Experience</h2>
-
-    <table width="100%" align="center" border="0" cellpadding="10">
-      <tbody>
-        <tr>
-          <td style="padding-left:18px;padding-right:20px;width:20%;vertical-align:middle">
-            <img src="images/Upenn_logo.jpg" width="108" alt="UPenn logo">
-          </td>
-          <td width="100%" valign="center">
-            <strong><a href="https://www.upenn.edu/" target="_blank">University of Pennsylvania (UPenn)</a></strong><br>
-            2025.2 - Present<br>
-            Research Assistant<br>
-            Advisor: <a href="https://nbfigueroa.github.io/" target="_blank">Prof. Nadia Figueroa</a>
-          </td>
-        </tr>
-
-        <tr>
-          <td style="padding-left:18px;padding-right:20px;width:20%;vertical-align:middle">
-            <img src="images/Upenn_logo.jpg" width="108" alt="UPenn logo">
-          </td>
-          <td width="100%" valign="center">
-            <strong><a href="https://www.upenn.edu/" target="_blank">University of Pennsylvania (UPenn)</a></strong><br>
-            2024.9 - 2025.2<br>
-            Research Assistant<br>
-            Advisor: <a href="https://xlab.upenn.edu/team/rahul/" target="_blank">Prof. Rahul Mangharam</a>
-          </td>
-        </tr>
-
-        <tr>
-          <td style="padding-left:18px;padding-right:20px;width:20%;vertical-align:middle">
-            <img src="images/UNNC_logo.jpg" width="108" alt="UNNC logo">
-          </td>
-          <td width="100%" valign="center">
-            <strong><a href="https://www.nottingham.edu.cn/" target="_blank">University of Nottingham Ningbo China (UNNC)</a></strong><br>
-            2023.6 - 2024.6<br>
-            Research Assistant<br>
-            Advisor: <a href="https://www.nottingham.edu.cn/en/science-engineering/people/inspiring-people/adam-rushworth.aspx" target="_blank">Prof. Adam Rushworth</a>
-          </td>
-        </tr>
-
-        <tr>
-          <td style="padding-left:18px;padding-right:20px;width:20%;vertical-align:middle">
-            <img src="images/Healthy_Photon_logo.jpg" width="108" alt="Healthy Photon logo">
-          </td>
-          <td width="100%" valign="center">
-            <strong><a href="https://en.healthyphoton.com/" target="_blank">Healthy Photon</a></strong><br>
-            2022.5 - 2022.7<br>
-            Assistant Embedded Software Engineer
-          </td>
-        </tr>
-
-        <tr>
-          <td style="padding-left:18px;padding-right:20px;width:20%;vertical-align:middle">
-            <img src="images/HIKVISION_logo.png" width="108" alt="Hikvision logo">
-          </td>
-          <td width="100%" valign="center">
-            <strong><a href="https://www.hikvision.com/us-en/" target="_blank">Hikvision</a></strong><br>
-            2021.6 - 2021.8<br>
-            Device Engineer
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- ===== Footer ===== -->
-  <div class="container">
-    <hr>
-    <p class="footer">
-      This homepage is designed based on <a href="https://jonbarron.info/">Jon Barron</a>'s website and deployed on <a href="https://pages.github.com/">Github Pages</a>.
-      Last updated: Jul. 19, 2025
+  <!-- Education -->
+  <table width="100%" align="center" border="0" cellpadding="10" style="max-width:800px;margin:0 auto;">
+    <tbody>
       <br>
-      © 2025 Lintao Zheng
-    </p>
-  </div>
+      <heading>Education</heading>
+      <br>
+
+      <tr>
+        <td style="padding-left:18px;padding-right:20px;width:20%;vertical-align:middle"><img src="images/Upenn_logo.jpg" width="108"></td>
+        <td width="100%" valign="center">
+          <strong><a href="https://www.upenn.edu/" target="_blank"><papertitle>University of Pennsylvania (UPenn)</papertitle></a></strong>
+          <br>2024.8 - 2026.5
+          <br>Electrical Engineering, MSE
+          <br> Advisor: <a href="https://nbfigueroa.github.io/" target="_blank">Prof. Nadia Figueroa</a> and <a href="https://xlab.upenn.edu/team/rahul/" target="_blank">Prof. Rahul Mangharam</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding-left:18px;padding-right:20px;width:20%;vertical-align:middle"><img src="images/UNNC_logo.jpg" width="108"></td>
+        <td width="100%" valign="center">
+          <strong><a href="https://www.nottingham.edu.cn/" target="_blank"><papertitle>University of Nottingham Ningbo China (UNNC)</papertitle></a></strong>
+          <br>2020.9 - 2024.6
+          <br>BEng Hons Electrical and Electronic Engineering
+          <br>GPA: 3.9/4.0
+          <br> Advisor: <a href="https://www.nottingham.edu.cn/en/science-engineering/people/inspiring-people/adam-rushworth.aspx" target="_blank">Prof. Adam Rushworth</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Footer -->
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr>
+        <td>
+          <hr>
+          <p style="text-align:center">
+            This homepage is designed based on <a href="https://jonbarron.info/">Jon Barron</a>'s website and deployed on <a href="https://pages.github.com/">Github Pages</a>. Last updated: Jul. 19, 2025
+            <br>
+            © 2025 Lintao Zheng
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
 </body>
 
