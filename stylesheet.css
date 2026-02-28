@@ -90,144 +90,85 @@ a:focus, a:hover {
 }
 b { color: #ff5005; }
 
-/* ===== Container ===== */
-.container{
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 12px;
-  box-sizing: border-box;
-}
-
-/* ===== Hero ===== */
-.hero{
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 20px;
-  align-items: start;
-  margin-top: 10px;
-}
-
-.hero-photo img{
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-}
-
-.hero-name{
-  margin: 0 0 8px 0;
-  font-size: 30px;
-  line-height: 1.15;
-}
-
-.hero-links{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 8px 0 10px 0;
-}
-
-.icon-link{
-  display: inline-flex;
-  width: 36px;
-  height: 36px;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(0,0,0,0.12);
-  border-radius: 10px;
-  text-shadow: none;
-}
-
-.links-toggle{
-  margin-left: auto;
-  border: 1px solid rgba(0,0,0,0.12);
-  background: transparent;
-  border-radius: 10px;
-  padding: 8px 10px;
+heading {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 13px;
-  cursor: pointer;
-}
-
-.hero-links-text{
-  margin: 6px 0 14px 0;
-  font-size: 13px;
-}
-
-.hero-intro p{
-  margin: 10px 0;
-  line-height: 1.55;
-  text-align: left;
-}
-
-/* ===== Section titles ===== */
-.section-title{
   font-size: 25px;
   text-decoration: underline;
+  text-decoration-style: solid;
+  -webkit-text-decoration-color: #ad7020;
   text-decoration-color: #fba524;
-  margin: 24px 0 12px 0;
 }
 
-/* ===== Projects cards ===== */
-.projects{
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.proj{
-  border: 1px solid rgba(0,0,0,0.10);
-  border-radius: 14px;
-  padding: 14px 14px;
-}
-
-.proj-title{
-  margin: 0 0 6px 0;
-  font-size: 16px;
+papertitle {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
   font-weight: 700;
 }
 
-.proj-meta{
-  font-size: 13px;
-  margin-bottom: 10px;
+name {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 28px;
 }
 
-.proj-list{
-  margin: 0;
-  padding-left: 18px;
-  line-height: 1.5;
+span.highlight { background-color: #ffffd0; }
+
+/* ===== Publication-style list (no outer boxes) ===== */
+.pub-table { width: 100%; border-collapse: separate; border-spacing: 0 18px; }
+.pub-item td { vertical-align: top; }
+
+.pub-img-wrap {
+  width: 220px;
+  max-width: 220px;
 }
 
-.proj-list ul{
-  margin-top: 6px;
-  padding-left: 18px;
+.pub-thumb {
+  width: 220px;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+  display: block;
 }
 
-/* ===== Footer ===== */
-.footer{
-  text-align: center;
-  padding: 10px 0 20px 0;
-}
+.pub-text p { margin: 0; line-height: 1.5; }
+.pub-text .pub-title { margin-bottom: 6px; }
+.pub-text .pub-meta { margin-top: 2px; }
 
-/* ===== Mobile ===== */
-@media (max-width: 768px){
-  .container{ padding: 0 12px; }
+/* ===== Mobile Responsive ===== */
+@media (max-width: 768px) {
+  body { padding: 0 10px; }
 
-  /* photo on top */
-  .hero{
-    grid-template-columns: 1fr;
-    gap: 14px;
+  /* Let the outer tables breathe on mobile */
+  table { max-width: 100% !important; }
+
+  /* Intro row: photo on top, text below */
+  .bio-inner-row { display: block; }
+  .bio-inner-row > td {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+  .bio-photo-cell { padding: 0 !important; }
+  .bio-text-cell { padding: 12px 4px !important; }
+
+  img[alt="profile photo"] {
+    width: 100% !important;
+    max-width: 420px !important;
+    margin: 0 auto !important;
+    display: block !important;
   }
 
-  /* full-bleed hero photo */
-  .hero-photo img{
-    border-radius: 0;
-    width: 100vw;
-    max-width: none;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+  /* Publication list: stack image then text */
+  .pub-item { display: block; }
+  .pub-item td { display: block; width: 100% !important; }
+
+  .pub-img-wrap { width: 100% !important; max-width: 100% !important; }
+  .pub-thumb {
+    width: 100% !important;
+    max-width: 520px;
+    margin: 0 auto 10px auto;
   }
 
-  .hero-name{ font-size: 28px; }
+  /* Make long text wrap and avoid ugly justify */
+  p { text-align: left !important; }
+  * { overflow-wrap: anywhere; word-break: break-word; }
 }
