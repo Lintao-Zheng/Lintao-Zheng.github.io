@@ -207,3 +207,59 @@ html { -webkit-text-size-adjust: 100%; }
   .bio-photo { order: 1; padding: 0 !important; }
   .bio-text  { order: 2; padding: 12px !important; }
 }
+
+/* =========================
+   Project layout: desktop left-image/right-text, mobile stacked
+   ========================= */
+
+/* Each project row uses two tds: .proj-img + .proj-text */
+.proj-row td {
+  vertical-align: top;
+}
+
+.proj-img {
+  width: 30%;
+  padding: 20px;
+  vertical-align: middle;
+}
+
+.proj-text {
+  width: 70%;
+  padding: 20px;
+  vertical-align: middle;
+}
+
+/* Image styling */
+.proj-img img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  /* optional subtle shadow, keep minimal */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* On mobile: stack image above text */
+@media (max-width: 768px) {
+  .proj-row,
+  .proj-row > td {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .proj-img {
+    padding: 12px 12px 6px 12px !important;
+  }
+
+  .proj-text {
+    padding: 6px 12px 12px 12px !important;
+  }
+
+  .proj-img img {
+    max-width: 100% !important;
+    margin: 0 auto;
+  }
+}
