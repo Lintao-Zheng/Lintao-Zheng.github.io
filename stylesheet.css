@@ -169,8 +169,7 @@ span.highlight {
   background-color: #ffffd0;
 }
 
-
-/* ===== Mobile responsive patch (no HTML change) ===== */
+/* ===== Mobile responsive patch (safe) ===== */
 img { max-width: 100%; height: auto; }
 name, intro, heading, papertitle { display: block; }
 html { -webkit-text-size-adjust: 100%; }
@@ -178,25 +177,31 @@ html { -webkit-text-size-adjust: 100%; }
 @media (max-width: 768px) {
   body { padding: 0 12px; }
 
-  /* Force all tables to fit screen */
   table { width: 100% !important; max-width: 100% !important; }
 
-  /* Stack table cells vertically on mobile */
-  tr { display: block; }
-  td { display: block; width: 100% !important; box-sizing: border-box; padding: 12px !important; }
-
-  /* Profile photo: centered and not tiny */
-  img[alt="profile photo"] {
-    width: 60% !important;
-    max-width: 240px !important;
-    margin: 0 auto !important;
-    display: block !important;
-  }
-
-  /* Make links and long text wrap nicely */
   p, li { line-height: 1.55; }
   * { overflow-wrap: anywhere; word-break: break-word; }
 
-  /* Optional: reduce excessive indentation created by &nbsp; */
+  /* justify on mobile often looks bad */
   p { text-align: left !important; }
+}
+
+@media (max-width: 768px) {
+  .bio-row { 
+    display: flex !important; 
+    flex-direction: column !important; 
+  }
+  .bio-photo { order: 1; padding: 0 !important; }
+  .bio-text  { order: 2; padding: 12px !important; }
+
+  /* full-bleed photo */
+  .bio-photo img[alt="profile photo"]{
+    width: 100vw !important;
+    max-width: none !important;
+    height: auto !important;
+    display: block !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    border-radius: 0 !important;
+  }
 }
