@@ -271,3 +271,11 @@ html { -webkit-text-size-adjust: 100%; }
 @media (max-width: 768px){
   .proj-text-only{ padding: 12px !important; }
 }
+
+.proj-media{
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
