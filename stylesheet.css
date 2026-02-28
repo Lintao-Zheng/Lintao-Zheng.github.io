@@ -175,7 +175,7 @@ name, intro, heading, papertitle { display: block; }
 html { -webkit-text-size-adjust: 100%; }
 
 @media (max-width: 768px) {
-  body { padding: 0 12px; }
+  body { padding: 0 8px; }
 
   table { width: 100% !important; max-width: 100% !important; }
 
@@ -187,21 +187,23 @@ html { -webkit-text-size-adjust: 100%; }
 }
 
 @media (max-width: 768px) {
-  .bio-row { 
-    display: flex !important; 
-    flex-direction: column !important; 
+  /* make the intro row full width on mobile */
+  .bio-row {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
   }
+
+  /* override the inline widths: 55% / 26% */
+  .bio-row > td,
+  .bio-text,
+  .bio-photo {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  /* order: photo first, then text */
   .bio-photo { order: 1; padding: 0 !important; }
   .bio-text  { order: 2; padding: 12px !important; }
-
-  /* full-bleed photo */
-  .bio-photo img[alt="profile photo"]{
-    width: 100vw !important;
-    max-width: none !important;
-    height: auto !important;
-    display: block !important;
-    margin-left: calc(50% - 50vw) !important;
-    margin-right: calc(50% - 50vw) !important;
-    border-radius: 0 !important;
-  }
 }
