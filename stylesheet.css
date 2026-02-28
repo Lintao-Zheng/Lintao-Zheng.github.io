@@ -3,8 +3,7 @@
   font-family: 'Lato';
   font-style: italic;
   font-weight: 400;
-  src: local('Lato Italic'), local('Lato-Italic'),
-    url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAUi-qNiXg7eU0.woff2) format('woff2');
+  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAUi-qNiXg7eU0.woff2) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
@@ -12,8 +11,7 @@
   font-family: 'Lato';
   font-style: italic;
   font-weight: 400;
-  src: local('Lato Italic'), local('Lato-Italic'),
-    url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAXC-qNiXg7Q.woff2) format('woff2');
+  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAXC-qNiXg7Q.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext */
@@ -21,8 +19,7 @@
   font-family: 'Lato';
   font-style: italic;
   font-weight: 700;
-  src: local('Lato Bold Italic'), local('Lato-BoldItalic'),
-    url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_FQftx9897sxZ.woff2) format('woff2');
+  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_FQftx9897sxZ.woff2) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
@@ -30,8 +27,7 @@
   font-family: 'Lato';
   font-style: italic;
   font-weight: 700;
-  src: local('Lato Bold Italic'), local('Lato-BoldItalic'),
-    url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_Gwftx9897g.woff2) format('woff2');
+  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_Gwftx9897g.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext */
@@ -39,8 +35,7 @@
   font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'),
-    url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
@@ -48,8 +43,7 @@
   font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'),
-    url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext */
@@ -57,8 +51,7 @@
   font-family: 'Lato';
   font-style: normal;
   font-weight: 700;
-  src: local('Lato Bold'), local('Lato-Bold'),
-    url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) format('woff2');
+  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
@@ -66,43 +59,78 @@
   font-family: 'Lato';
   font-style: normal;
   font-weight: 700;
-  src: local('Lato Bold'), local('Lato-Bold'),
-    url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
+  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* ===== Base ===== */
-html { -webkit-text-size-adjust: 100%; }
-body, td, th, tr, p, a {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
-}
-img { max-width: 100%; height: auto; }
 
 a {
   color: #fe6a00e9;
   text-decoration: none;
   text-shadow: 0px 0px 1px rgb(235, 255, 58);
+  
 }
-a:focus, a:hover {
+b {
+  color: #ff5005;
+  text-decoration: none;
+}
+c {
+  color: #000000;
+  text-decoration: none;
+}
+
+a.a1 { color:  #fe6a00e9;
+  text-shadow: 0px 0px 0.5px rgb(235, 61, 30);}
+a.a2 { color:  #000000;text-shadow: none;}
+a.a1:focus,
+/* a.a1:hover { color:rgb(95, 23, 110);
+  text-decoration: none;} */
+
+
+a:focus,
+a:hover {
   color: #f09228;
   text-decoration: none;
 }
-b { color: #ff5005; }
+
+body,
+td,
+th,
+tr,
+p,
+a {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  
+}
+
+strong {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+}
 
 heading {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 25px;
+  /*color: #313164;*/
   text-decoration: underline;
   text-decoration-style: solid;
   -webkit-text-decoration-color: #ad7020;
-  text-decoration-color: #fba524;
+  text-decoration-color: #fba524; /* #ac715b; */
+}
+
+heading2 {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 25px;
+  /*color: #313164;*/
+  -webkit-text-decoration-color: #ad7020;
+  text-decoration-color: #fba524; /* #ac715b; */
 }
 
 papertitle {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 700
 }
 
 name {
@@ -110,65 +138,72 @@ name {
   font-size: 28px;
 }
 
-span.highlight { background-color: #ffffd0; }
-
-/* ===== Publication-style list (no outer boxes) ===== */
-.pub-table { width: 100%; border-collapse: separate; border-spacing: 0 18px; }
-.pub-item td { vertical-align: top; }
-
-.pub-img-wrap {
-  width: 220px;
-  max-width: 220px;
+abs {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  color:
+  	#EB6400;
+}
+.one {
+  width: 160px;
+  height: 160px;
+  position: relative;
 }
 
-.pub-thumb {
-  width: 220px;
-  border-radius: 6px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
-  display: block;
+.two {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
 }
 
-.pub-text p { margin: 0; line-height: 1.5; }
-.pub-text .pub-title { margin-bottom: 6px; }
-.pub-text .pub-meta { margin-top: 2px; }
+.fade {
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
 
-/* ===== Mobile Responsive ===== */
+span.highlight {
+  background-color: #ffffd0;
+}
+
+/* ===== Mobile responsive patch (safe) ===== */
+img { max-width: 100%; height: auto; }
+name, intro, heading, papertitle { display: block; }
+html { -webkit-text-size-adjust: 100%; }
+
 @media (max-width: 768px) {
-  body { padding: 0 10px; }
+  body { padding: 0 8px; }
 
-  /* Let the outer tables breathe on mobile */
-  table { max-width: 100% !important; }
+  table { width: 100% !important; max-width: 100% !important; }
 
-  /* Intro row: photo on top, text below */
-  .bio-inner-row { display: block; }
-  .bio-inner-row > td {
-    display: block;
+  p, li { line-height: 1.55; }
+  * { overflow-wrap: anywhere; word-break: break-word; }
+
+  /* justify on mobile often looks bad */
+  p { text-align: left !important; }
+}
+
+@media (max-width: 768px) {
+  /* make the intro row full width on mobile */
+  .bio-row {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  /* override the inline widths: 55% / 26% */
+  .bio-row > td,
+  .bio-text,
+  .bio-photo {
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box;
   }
-  .bio-photo-cell { padding: 0 !important; }
-  .bio-text-cell { padding: 12px 4px !important; }
 
-  img[alt="profile photo"] {
-    width: 100% !important;
-    max-width: 420px !important;
-    margin: 0 auto !important;
-    display: block !important;
-  }
-
-  /* Publication list: stack image then text */
-  .pub-item { display: block; }
-  .pub-item td { display: block; width: 100% !important; }
-
-  .pub-img-wrap { width: 100% !important; max-width: 100% !important; }
-  .pub-thumb {
-    width: 100% !important;
-    max-width: 520px;
-    margin: 0 auto 10px auto;
-  }
-
-  /* Make long text wrap and avoid ugly justify */
-  p { text-align: left !important; }
-  * { overflow-wrap: anywhere; word-break: break-word; }
+  /* order: photo first, then text */
+  .bio-photo { order: 1; padding: 0 !important; }
+  .bio-text  { order: 2; padding: 12px !important; }
 }
