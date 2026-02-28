@@ -168,3 +168,35 @@ abs {
 span.highlight {
   background-color: #ffffd0;
 }
+
+
+/* ===== Mobile responsive patch (no HTML change) ===== */
+img { max-width: 100%; height: auto; }
+name, intro, heading, papertitle { display: block; }
+html { -webkit-text-size-adjust: 100%; }
+
+@media (max-width: 768px) {
+  body { padding: 0 12px; }
+
+  /* Force all tables to fit screen */
+  table { width: 100% !important; max-width: 100% !important; }
+
+  /* Stack table cells vertically on mobile */
+  tr { display: block; }
+  td { display: block; width: 100% !important; box-sizing: border-box; padding: 12px !important; }
+
+  /* Profile photo: centered and not tiny */
+  img[alt="profile photo"] {
+    width: 60% !important;
+    max-width: 240px !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+  /* Make links and long text wrap nicely */
+  p, li { line-height: 1.55; }
+  * { overflow-wrap: anywhere; word-break: break-word; }
+
+  /* Optional: reduce excessive indentation created by &nbsp; */
+  p { text-align: left !important; }
+}
