@@ -210,83 +210,100 @@ html { -webkit-text-size-adjust: 100%; }
 
 
 /* =========================
-   Project Card + Desktop preview + Modal (no JS)
+   Project card (2-row group) styling
    ========================= */
 
-.proj-card-wrap{
-  border: 1px solid rgba(0,0,0,0.10);
-  border-radius: 14px;
-  padding: 18px;
-  margin: 18px 0;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+/* Make each <tr.proj-card> look like a card row */
+tr.proj-card > td{
   background: #fff;
+  border-left: 1px solid rgba(0,0,0,0.10);
+  border-right: 1px solid rgba(0,0,0,0.10);
 }
 
-.proj-top{
-  display: flex;
-  gap: 18px;
-  align-items: flex-start;
+/* top row of a card group */
+tr.proj-card:first-of-type > td{}
+
+/* We will rely on your structure:
+   - A "head row" (has .proj-head-cell or .proj-textonly-head)
+   - Followed by a "detail row" (has .proj-detail-cell or .proj-textonly-body)
+*/
+
+/* Head row: add top border + top radius */
+tr.proj-card td.proj-head-cell,
+tr.proj-card td.proj-textonly-head{
+  border-top: 1px solid rgba(0,0,0,0.10);
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
 }
 
-.proj-left{
-  flex: 0 0 220px; /* media column width */
+/* Detail row: add bottom border + bottom radius */
+tr.proj-card td.proj-detail-cell,
+tr.proj-card td.proj-textonly-body{
+  border-bottom: 1px solid rgba(0,0,0,0.10);
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
 }
 
-.proj-right{
-  flex: 1 1 auto;
-  min-width: 0; /* important for ellipsis */
+/* spacing between cards */
+tr.proj-card{
+  /* table rows can't have margin; use extra padding on cells */
+}
+td.proj-head-cell,
+td.proj-textonly-head,
+td.proj-detail-cell,
+td.proj-textonly-body{
+  padding: 16px 18px;
 }
 
-/* media unified */
-.proj-left img,
-.proj-left video{
+/* Media cell inside the head row */
+td.proj-media-cell{
+  width: 240px;          /* fixed column so right side won't look too empty */
+  padding: 16px 18px;
+  vertical-align: top;
+}
+
+td.proj-head-cell{
+  vertical-align: top;
+}
+
+/* Video/image unified look */
+td.proj-media-cell video,
+td.proj-media-cell img{
   width: 100%;
   max-width: 220px;
   height: auto;
   display: block;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-}
-.proj-left video{ object-fit: cover; }
-
-/* header */
-.proj-title-row papertitle{
-  display: inline-block;
-}
-.proj-meta{
-  margin-top: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
 }
 
-/* Desktop details preview box */
+/* =========================
+   Desktop: preview area + modal (for media projects)
+   ========================= */
+
+/* We will create a preview box inside the detail row */
 .proj-preview{
-  margin-top: 12px;
+  margin-top: 10px;
   padding: 12px 12px;
   border-radius: 12px;
   background: rgba(0,0,0,0.03);
 }
 
-/* clamp text (ellipsis) */
+/* clamp text -> ellipsis */
 .proj-preview-text{
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6; /* desktop preview lines */
+  -webkit-line-clamp: 6; /* preview lines on desktop */
   overflow: hidden;
 }
 
-/* “Read more” */
 .proj-more{
   margin-top: 8px;
   display: inline-block;
   font-weight: 700;
 }
 
-/* ---------- Text-only project ---------- */
-.proj-textonly .proj-top{ display: block; }
-.proj-textonly .proj-right{ width: 100%; }
-.proj-textonly .proj-preview{ display: none; } /* text-only: no preview box */
-.proj-textonly .proj-full{ margin-top: 10px; }
-
-/* ---------- Modal (pure CSS via :target) ---------- */
+/* Modal (no JS): open with :target */
 .proj-modal{
   position: fixed;
   inset: 0;
@@ -329,30 +346,27 @@ html { -webkit-text-size-adjust: 100%; }
 
 .proj-modal-body{
   padding: 14px 16px;
-  overflow: auto;   /* scroll bar */
+  overflow: auto; /* scroll bar */
   max-height: calc(min(78vh, 680px) - 56px);
 }
 
-/* ---------- Mobile: stack ---------- */
-@media (max-width: 768px){
-  .proj-card-wrap{ padding: 12px; }
+/* =========================
+   Behavior rules
+   - Desktop: media projects use preview+modal, hide <details>
+   - Mobile: keep <details> (your current good behavior), hide preview+modal link
+   ========================= */
 
-  .proj-top{
-    display: block;
-  }
-
-  .proj-left{
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 10px;
-  }
-
-  .proj-left img,
-  .proj-left video{
-    max-width: 100%;
-  }
-
-  /* mobile: show full text by default, hide preview box */
-  .proj-preview{ display: none; }
-  .proj-full{ margin-top: 10px; }
+@media (min-width: 769px){
+  /* hide native <details> on desktop (media projects) */
+  details.proj-details{ display: none; }
 }
+
+@media (max-width: 768px){
+  /* On mobile, keep <details>, hide preview style block (we will add) */
+  .proj-preview{ display: none !important; }
+}
+
+/* =========================
+   Text-only projects: always show full content, no <details>
+   ========================= */
+.proj-textonly-body p{ margin: 0; }
