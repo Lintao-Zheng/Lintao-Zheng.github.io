@@ -163,39 +163,30 @@
     <br>
 
     <!-- Project 1: no media -->
-    <tr class="proj-card">
-      <td class="proj-media-cell">
-        <!-- no media -->
-      </td>
-      <td class="proj-head-cell">
-        <a href="" target="_blank">
-          <papertitle>Uncertainty-Aware MPPI Planning and Control for Robust Robotic Tasks</papertitle>
-        </a>
-        <br>
-        <em><strong>Research Assistant at Figueroa Robotics Lab, advised by <b>Prof. Nadia Figueroa</b></strong></em>
-      </td>
-    </tr>
-    <tr class="proj-card">
-      <td class="proj-detail-cell" colspan="2">
-        <details class="proj-details">
-          <summary>Details</summary>
-          <div class="proj-body">
-            <p>
-              1. Built an MPPI-based stochastic planning and control framework for online replanning and obstacle avoidance under perception uncertainty and environmental disturbances, optimized for real-time execution via parallel rollouts.
-              <br>
-              2. Integrated YOLO-based perception and injected detection uncertainty into MPPI instead of point estimates.
-              <br>
-              3. Modeled two complementary uncertainty sources to improve robustness and safety:<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;(i) <b>Spatial uncertainty</b>: modeled target position as a distribution to guide MPPI toward the belief, not a single detection;<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;(ii) <b>Detection confidence</b>: weighted the cost by YOLO confidence to avoid high-uncertainty regions.<br>
-              4. Added risk-averse and exploration costs to trade off safety and information gathering in uncertain environments.
-              <br>
-              5. Accelerated sampling and cost evaluation with JAX and maintained a stable 100 Hz control loop; experiments showed reliable planning and execution under glare/occlusion, missed detections, and increased noise, improving tracking accuracy and reducing failure rates.
-            </p>
-          </div>
-        </details>
-      </td>
-    </tr>
+	<tr class="proj-card">
+	  <td class="proj-textonly-head" colspan="2">
+	    <a href="" target="_blank">
+	      <papertitle>Uncertainty-Aware MPPI Planning and Control for Robust Robotic Tasks</papertitle>
+	    </a><br>
+	    <em><strong>Research Assistant at Figueroa Robotics Lab, advised by <b>Prof. Nadia Figueroa</b></strong></em>
+	  </td>
+	</tr>
+	<tr class="proj-card">
+	  <td class="proj-textonly-body" colspan="2">
+	    <p>
+	      1. Built an MPPI-based stochastic planning and control framework for online replanning and obstacle avoidance under perception uncertainty and environmental disturbances, optimized for real-time execution via parallel rollouts.
+	      <br>
+	      2. Integrated YOLO-based perception and injected detection uncertainty into MPPI instead of point estimates.
+	      <br>
+	      3. Modeled two complementary uncertainty sources to improve robustness and safety:<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;(i) <b>Spatial uncertainty</b>: modeled target position as a distribution to guide MPPI toward the belief, not a single detection;<br>
+	      &nbsp;&nbsp;&nbsp;&nbsp;(ii) <b>Detection confidence</b>: weighted the cost by YOLO confidence to avoid high-uncertainty regions.<br>
+	      4. Added risk-averse and exploration costs to trade off safety and information gathering in uncertain environments.
+	      <br>
+	      5. Accelerated sampling and cost evaluation with JAX and maintained a stable 100 Hz control loop; experiments showed reliable planning and execution under glare/occlusion, missed detections, and increased noise, improving tracking accuracy and reducing failure rates.
+	    </p>
+	  </td>
+	</tr>
 
     <!-- Project 3: pick_place video -->
     <tr class="proj-card">
@@ -273,7 +264,10 @@
     <!-- Project 2: no media -->
     <tr class="proj-card">
       <td class="proj-media-cell">
-        <!-- no media -->
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="images/forklift.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </td>
       <td class="proj-head-cell">
         <a href="" target="_blank">
@@ -305,7 +299,10 @@
     <!-- Project 4: (currently no media in your HTML, keep as no media) -->
     <tr class="proj-card">
       <td class="proj-media-cell">
-        <!-- no media -->
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="images/mobile_robot.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </td>
       <td class="proj-head-cell">
         <a href="" target="_blank">
@@ -339,7 +336,10 @@
     <!-- Project 5: no media -->
     <tr class="proj-card">
       <td class="proj-media-cell">
-        <!-- no media -->
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="images/Odometry.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </td>
       <td class="proj-head-cell">
         <a href="" target="_blank">
