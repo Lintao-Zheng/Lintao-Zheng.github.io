@@ -354,16 +354,24 @@ html { -webkit-text-size-adjust: 100%; }
   display: none;
 }
 
-@media (max-width: 768px){
-  .proj-top{
-    flex-direction: column;
-  }
-  .proj-media-wrap{
-    width: 100%;
-    max-width: 100%;
+/* ===== Mobile: show full video (no cropping) ===== */
+@media (max-width: 768px) {
+  .proj-media-cell,
+  .proj-card,
+  .proj-media-cell video {
+    overflow: visible !important;
   }
 
-  /* on mobile, hide preview + modal entry; use details */
-  .proj-preview{ display: none; }
-  .proj-details-mobile{ display: block; margin-top: 10px; }
+  .proj-media-cell video,
+  .proj-media {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;        
+    object-fit: contain !important;   
+    display: block;
+  }
+
+  .proj-media-cell {
+    padding: 12px !important;
+  }
 }
