@@ -185,30 +185,16 @@
     </td>
   </tr>
 
-  <!-- Project 2 (no image, Scheme A) -->
-  <tr class="proj-row">
-    <td class="proj-text-only" colspan="2">
-      <a href="" target="_blank">
-        <papertitle>Teleoperated Forklift System Integration
-        </papertitle>
-      </a>
-      <br>
-      <em><strong>Research Assistant at xLab, advised by <b>Prof. Rahul Mangharam</b></strong></em>
-      <p>
-        1. Utilized the CAN protocol to establish communication between the Jetson and the forklift.
-        <br>
-        2. Built Bluetooth communication to translate joystick inputs on the Jetson to forklift control commands.
-        <br>
-        3. Achieved full remote forklift control including driving, steering and lifting.
-        <br>
-        4. Designed and fabricated a 3D-printed and laser-cut chassis to mount the Jetson, power system, and communication hardware and a stable top-mounted camera system to support teleoperation perception.
-      </p>
-    </td>
-  </tr>
-
   <!-- Project 3 (no image, Scheme A) -->
   <tr class="proj-row">
-    <td class="proj-text-only" colspan="2">
+	<td class="proj-media-cell">
+	    <video class="proj-media" autoplay muted loop playsinline preload="metadata">
+	      <source src="images/pick_place.mp4" type="video/mp4">
+	      <!-- fallback text -->
+	      Your browser does not support the video tag.
+	    </video>
+	  </td>
+    <td class="proj-text-cell">
       <a href="" target="_blank">
         <papertitle>Penn Robotics Pick-and-Place Challenge (Champion) — Dynamic Pick-and-Place Control System (Sep 2025 – Dec 2025)
         </papertitle>
@@ -230,6 +216,54 @@
     </td>
   </tr>
 
+  <!-- Project 6 (no image, Scheme A) -->
+  <tr class="proj-row">
+	<td class="proj-media-cell">
+	    <video class="proj-media" autoplay muted loop playsinline preload="metadata">
+	      <source src="images/tennis_juggling.mp4" type="video/mp4">
+	      <!-- fallback text -->
+	      Your browser does not support the video tag.
+	    </video>
+	  </td>
+    <td class="proj-text-cell">
+      <a href="" target="_blank">
+        <papertitle>MPC-Based High-Speed Dynamic Juggling with a Franka Panda
+        </papertitle>
+      </a>
+      <br>
+      <em><strong>Control & Optimization Project, advised by <b>Prof. Michael Posa</b> (Sep 2025 – Dec 2025)</strong></em>
+      <p>
+        1. Built a MuJoCo simulation for high-speed Franka Panda juggling with ball flight prediction + contact modeling for capture and sustained juggling.
+        <br>
+        2. Designed a three-layer control stack:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;(i) <b>High-level</b>: choose contact timing and target paddle normal/impact velocity to meet apex + region constraints.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;(ii) <b>Mid-level</b>: IK/velocity-IK + joint-space MPC (terminal constraints) to generate smooth, feasible reference trajectories.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;(iii) <b>Low-level</b>: torque tracking via joint-space PD + gravity compensation for stable execution.<br>
+        3. Ran the full system in a 100 Hz closed loop and achieved smooth tracking; across diverse initial ball states, the robot stabilized the ball into a target region within 3–5 seconds and maintained periodic juggling.
+      </p>
+    </td>
+  </tr>
+
+  <!-- Project 2 (no image, Scheme A) -->
+  <tr class="proj-row">
+    <td class="proj-text-only" colspan="2">
+      <a href="" target="_blank">
+        <papertitle>Teleoperated Forklift System Integration
+        </papertitle>
+      </a>
+      <br>
+      <em><strong>Research Assistant at xLab, advised by <b>Prof. Rahul Mangharam</b></strong></em>
+      <p>
+        1. Utilized the CAN protocol to establish communication between the Jetson and the forklift.
+        <br>
+        2. Built Bluetooth communication to translate joystick inputs on the Jetson to forklift control commands.
+        <br>
+        3. Achieved full remote forklift control including driving, steering and lifting.
+        <br>
+        4. Designed and fabricated a 3D-printed and laser-cut chassis to mount the Jetson, power system, and communication hardware and a stable top-mounted camera system to support teleoperation perception.
+      </p>
+    </td>
+  </tr>
 	  
 	<!-- Project 4 (video, Scheme A) -->
 	<tr class="proj-row">
@@ -269,34 +303,6 @@
         2. Fused LiDAR, camera, and IMU measurements with a Kalman filter to reduce motion- and slip-related localization errors.
         <br>
         3. Calibrated and benchmarked odometry using AprilTag-based pose estimates as an external reference.
-      </p>
-    </td>
-  </tr>
-
-  <!-- Project 6 (no image, Scheme A) -->
-  <tr class="proj-row">
-	<td class="proj-media-cell">
-	    <video class="proj-media" autoplay muted loop playsinline preload="metadata">
-	      <source src="images/teleop_robot.mp4" type="video/mp4">
-	      <!-- fallback text -->
-	      Your browser does not support the video tag.
-	    </video>
-	  </td>
-    <td class="proj-text-cell">
-      <a href="" target="_blank">
-        <papertitle>MPC-Based High-Speed Dynamic Juggling with a Franka Panda
-        </papertitle>
-      </a>
-      <br>
-      <em><strong>Control & Optimization Project, advised by <b>Prof. Michael Posa</b> (Sep 2025 – Dec 2025)</strong></em>
-      <p>
-        1. Built a MuJoCo simulation for high-speed Franka Panda juggling with ball flight prediction + contact modeling for capture and sustained juggling.
-        <br>
-        2. Designed a three-layer control stack:<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;(i) <b>High-level</b>: choose contact timing and target paddle normal/impact velocity to meet apex + region constraints.<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;(ii) <b>Mid-level</b>: IK/velocity-IK + joint-space MPC (terminal constraints) to generate smooth, feasible reference trajectories.<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;(iii) <b>Low-level</b>: torque tracking via joint-space PD + gravity compensation for stable execution.<br>
-        3. Ran the full system in a 100 Hz closed loop and achieved smooth tracking; across diverse initial ball states, the robot stabilized the ball into a target region within 3–5 seconds and maintained periodic juggling.
       </p>
     </td>
   </tr>
