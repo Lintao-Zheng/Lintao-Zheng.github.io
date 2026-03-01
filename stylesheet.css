@@ -210,163 +210,160 @@ html { -webkit-text-size-adjust: 100%; }
 
 
 /* =========================
-   Project card (2-row group) styling
+   Project cards (stable)
    ========================= */
 
-/* Make each <tr.proj-card> look like a card row */
-tr.proj-card > td{
+/* one project = one card */
+.proj-card-row > td{
+  padding: 0 !important;
+}
+
+.proj-card{
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 14px;
   background: #fff;
-  border-left: 1px solid rgba(0,0,0,0.10);
-  border-right: 1px solid rgba(0,0,0,0.10);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  padding: 18px;
+  margin: 14px 0;
 }
 
-/* top row of a card group */
-tr.proj-card:first-of-type > td{}
-
-/* We will rely on your structure:
-   - A "head row" (has .proj-head-cell or .proj-textonly-head)
-   - Followed by a "detail row" (has .proj-detail-cell or .proj-textonly-body)
-*/
-
-/* Head row: add top border + top radius */
-tr.proj-card td.proj-head-cell,
-tr.proj-card td.proj-textonly-head{
-  border-top: 1px solid rgba(0,0,0,0.10);
-  border-top-left-radius: 14px;
-  border-top-right-radius: 14px;
+/* top area: media left, meta right */
+.proj-top{
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
 }
 
-/* Detail row: add bottom border + bottom radius */
-tr.proj-card td.proj-detail-cell,
-tr.proj-card td.proj-textonly-body{
-  border-bottom: 1px solid rgba(0,0,0,0.10);
-  border-bottom-left-radius: 14px;
-  border-bottom-right-radius: 14px;
-}
-
-/* spacing between cards */
-tr.proj-card{
-  /* table rows can't have margin; use extra padding on cells */
-}
-td.proj-head-cell,
-td.proj-textonly-head,
-td.proj-detail-cell,
-td.proj-textonly-body{
-  padding: 16px 18px;
-}
-
-/* Media cell inside the head row */
-td.proj-media-cell{
-  width: 240px;          /* fixed column so right side won't look too empty */
-  padding: 16px 18px;
-  vertical-align: top;
-}
-
-td.proj-head-cell{
-  vertical-align: top;
-}
-
-/* Video/image unified look */
-td.proj-media-cell video,
-td.proj-media-cell img{
-  width: 100%;
-  max-width: 220px;
-  height: auto;
-  display: block;
-  border-radius: 12px;
+/* media wrapper: fixed, prevents video weird sizing */
+.proj-media-wrap{
+  width: 340px;             /* desktop media width */
+  max-width: 40%;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+  flex: 0 0 auto;
+  aspect-ratio: 16 / 9;     /* keeps consistent height */
   box-shadow: 0 2px 10px rgba(0,0,0,0.12);
 }
 
-/* =========================
-   Desktop: preview area + modal (for media projects)
-   ========================= */
-
-/* We will create a preview box inside the detail row */
-.proj-preview{
-  margin-top: 10px;
-  padding: 12px 12px;
-  border-radius: 12px;
-  background: rgba(0,0,0,0.03);
+.proj-media-wrap video,
+.proj-media-wrap img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;        /* crop nicely */
 }
 
-/* clamp text -> ellipsis */
+/* right meta */
+.proj-meta{
+  flex: 1 1 auto;
+  min-width: 0;             /* IMPORTANT: prevents squeezing into vertical text */
+}
+
+.proj-title{
+  margin: 0 0 6px 0;
+  line-height: 1.25;
+}
+
+.proj-role{
+  margin: 0;
+}
+
+/* desktop details preview on the right (always visible but clamped) */
+.proj-preview{
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.03);
+  position: relative;
+}
+
 .proj-preview-text{
+  margin: 0;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6; /* preview lines on desktop */
+  -webkit-line-clamp: 5;     /* show 5 lines, rest hidden */
   overflow: hidden;
 }
 
 .proj-more{
-  margin-top: 8px;
   display: inline-block;
+  margin-top: 6px;
   font-weight: 700;
+  color: #fe6a00e9;
 }
 
-/* Modal (no JS): open with :target */
+/* full details for no-media projects */
+.proj-body-full{
+  margin-top: 10px;
+}
+
+/* modal (click read more) */
 .proj-modal{
+  display: none;
+}
+
+.proj-modal:target{
+  display: block;
   position: fixed;
   inset: 0;
-  display: none;
   z-index: 9999;
 }
-.proj-modal:target{ display: block; }
 
 .proj-modal-backdrop{
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0,0,0,0.45);
+  display: block;
 }
 
 .proj-modal-panel{
-  position: relative;
-  width: min(860px, calc(100% - 24px));
-  max-height: min(78vh, 680px);
-  margin: 8vh auto 0 auto;
+  position: fixed;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(860px, 92vw);
+  max-height: 84vh;
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
   overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.30);
 }
 
 .proj-modal-head{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 16px;
+  padding: 12px 14px;
   border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
-.proj-modal-close{
-  font-weight: 800;
-  padding: 6px 10px;
-  border-radius: 10px;
-  background: rgba(0,0,0,0.06);
-}
-
 .proj-modal-body{
-  padding: 14px 16px;
-  overflow: auto; /* scroll bar */
-  max-height: calc(min(78vh, 680px) - 56px);
+  padding: 14px;
+  overflow: auto;
+  max-height: calc(84vh - 52px);
 }
 
-/* =========================
-   Behavior rules
-   - Desktop: media projects use preview+modal, hide <details>
-   - Mobile: keep <details> (your current good behavior), hide preview+modal link
-   ========================= */
+.proj-modal-close{
+  font-weight: 700;
+  color: #fe6a00e9;
+}
 
-@media (min-width: 769px){
-  /* hide native <details> on desktop (media projects) */
-  details.proj-details{ display: none; }
+/* mobile: stack, and use native <details> */
+.proj-details-mobile{
+  display: none;
 }
 
 @media (max-width: 768px){
-  /* On mobile, keep <details>, hide preview style block (we will add) */
-  .proj-preview{ display: none !important; }
-}
+  .proj-top{
+    flex-direction: column;
+  }
+  .proj-media-wrap{
+    width: 100%;
+    max-width: 100%;
+  }
 
-/* =========================
-   Text-only projects: always show full content, no <details>
-   ========================= */
-.proj-textonly-body p{ margin: 0; }
+  /* on mobile, hide preview + modal entry; use details */
+  .proj-preview{ display: none; }
+  .proj-details-mobile{ display: block; margin-top: 10px; }
+}
