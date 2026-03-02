@@ -296,3 +296,34 @@ html { -webkit-text-size-adjust: 100%; }
     box-shadow: 0 2px 10px rgba(0,0,0,0.12);
   }
 }
+/* ===== Project description: collapse/expand ===== */
+
+/* 默认展开：什么都不裁剪 */
+.proj-desc { margin-top: 10px; }
+
+/* 折叠时：对里面的 p 做 clamp（关键点） */
+.proj-desc.is-collapsed p{
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;     /* 想显示几行就改这里 */
+  overflow: hidden;
+}
+
+/* 非 webkit 浏览器兜底：限制高度（大致 4 行） */
+@supports not (-webkit-line-clamp: 1){
+  .proj-desc.is-collapsed p{
+    max-height: 6.2em;       /* 约 4 行 */
+    overflow: hidden;
+  }
+}
+
+/* Read more / Show less 按钮样式 */
+.proj-toggle{
+  display: inline-block;
+  margin-top: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  color: #fe6a00e9;
+  user-select: none;
+}
