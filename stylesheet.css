@@ -354,24 +354,37 @@ html { -webkit-text-size-adjust: 100%; }
   display: none;
 }
 
-/* ===== Mobile: show full video (no cropping) ===== */
+/* ===== Mobile: stack card + show full media ===== */
 @media (max-width: 768px) {
-  .proj-media-cell,
-  .proj-card,
-  .proj-media-cell video {
-    overflow: visible !important;
+
+  .proj-top{
+    flex-direction: column !important;
+    gap: 12px !important;
   }
 
-  .proj-media-cell video,
-  .proj-media {
+
+  .proj-media-wrap{
     width: 100% !important;
     max-width: 100% !important;
+    aspect-ratio: auto !important;  
+    background: transparent !important;
+    overflow: hidden;             
+  }
+
+
+  .proj-media-wrap video,
+  .proj-media-wrap img{
+    width: 100% !important;
     height: auto !important;        
     object-fit: contain !important;   
     display: block;
   }
 
-  .proj-media-cell {
-    padding: 12px !important;
+
+  .proj-card{
+    padding: 14px !important;
   }
+
+
+  .proj-meta{ min-width: 0 !important; }
 }
