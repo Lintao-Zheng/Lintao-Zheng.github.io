@@ -311,3 +311,45 @@ html { -webkit-text-size-adjust: 100%; }
     background: #000;
   }
 }
+
+/* preview text inside the empty space on the right */
+.proj-snippet{
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.03);
+}
+
+.proj-snippet p{
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;   /* preview lines on desktop */
+  overflow: hidden;
+}
+
+/* details under the preview */
+.proj-details{
+  margin-top: 8px;
+}
+
+.proj-details summary{
+  cursor: pointer;
+  font-weight: 700;
+  color: #fe6a00e9;
+  list-style: none;
+}
+
+.proj-details summary::-webkit-details-marker{
+  display: none;
+}
+
+/* make “More” look like a small link */
+.proj-details summary::before{
+  content: "▸ ";
+  color: #fe6a00e9;
+}
+
+.proj-details[open] summary::before{
+  content: "▾ ";
+}
