@@ -209,14 +209,9 @@ html { -webkit-text-size-adjust: 100%; }
 }
 
 
-/* =========================
-   Project cards (stable)
-   ========================= */
+/* ===== Project card + inline details (no modal) ===== */
 
-/* one project = one card */
-.proj-card-row > td{
-  padding: 0 !important;
-}
+.proj-card-row > td { padding: 0 !important; }
 
 .proj-card{
   border: 1px solid rgba(0,0,0,0.08);
@@ -227,22 +222,21 @@ html { -webkit-text-size-adjust: 100%; }
   margin: 14px 0;
 }
 
-/* top area: media left, meta right */
+/* top: media left + meta right */
 .proj-top{
   display: flex;
   gap: 18px;
   align-items: flex-start;
 }
 
-/* media wrapper: fixed, prevents video weird sizing */
 .proj-media-wrap{
-  width: 340px;             /* desktop media width */
+  width: 340px;
   max-width: 40%;
   border-radius: 14px;
   overflow: hidden;
   background: #000;
   flex: 0 0 auto;
-  aspect-ratio: 16 / 9;     /* keeps consistent height */
+  aspect-ratio: 16 / 9;
   box-shadow: 0 2px 10px rgba(0,0,0,0.12);
 }
 
@@ -251,140 +245,69 @@ html { -webkit-text-size-adjust: 100%; }
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;        /* crop nicely */
+  object-fit: cover; /* desktop nicely cropped */
 }
 
-/* right meta */
 .proj-meta{
   flex: 1 1 auto;
-  min-width: 0;             /* IMPORTANT: prevents squeezing into vertical text */
+  min-width: 0;
 }
 
-.proj-title{
-  margin: 0 0 6px 0;
-  line-height: 1.25;
-}
+.proj-title{ margin: 0 0 6px 0; line-height: 1.25; }
+.proj-role{ margin: 0; }
 
-.proj-role{
-  margin: 0;
-}
-
-/* desktop details preview on the right (always visible but clamped) */
-.proj-preview{
-  margin-top: 10px;
-  padding: 10px 12px;
+/* inline details */
+.proj-details{
+  margin-top: 12px;
   border-radius: 12px;
   background: rgba(0,0,0,0.03);
-  position: relative;
+  padding: 10px 12px;
 }
 
-.proj-preview-text{
-  margin: 0;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;     /* show 5 lines, rest hidden */
-  overflow: hidden;
+.proj-details > summary{
+  cursor: pointer;
+  list-style: none;
+  font-weight: 700;
+  color: #fe6a00e9;
+  user-select: none;
 }
 
-.proj-more{
+.proj-details > summary::-webkit-details-marker{ display: none; }
+
+.proj-details > summary:before{
+  content: "▶";
   display: inline-block;
-  margin-top: 6px;
-  font-weight: 700;
-  color: #fe6a00e9;
+  margin-right: 8px;
+  transform: translateY(-1px);
 }
 
-/* full details for no-media projects */
-.proj-body-full{
-  margin-top: 10px;
+.proj-details[open] > summary:before{
+  content: "▼";
 }
 
-/* modal (click read more) */
-.proj-modal{
-  display: none;
-}
+.proj-body{ margin-top: 10px; }
+.proj-body p{ margin: 0; }
 
-.proj-modal:target{
-  display: block;
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-}
+/* text-only project */
+.proj-textonly-head .proj-title{ margin: 0; }
+.proj-textonly-head{ margin-bottom: 8px; }
 
-.proj-modal-backdrop{
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  display: block;
-}
-
-.proj-modal-panel{
-  position: fixed;
-  top: 8%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(860px, 92vw);
-  max-height: 84vh;
-  background: #fff;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.30);
-}
-
-.proj-modal-head{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 14px;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-}
-
-.proj-modal-body{
-  padding: 14px;
-  overflow: auto;
-  max-height: calc(84vh - 52px);
-}
-
-.proj-modal-close{
-  font-weight: 700;
-  color: #fe6a00e9;
-}
-
-/* mobile: stack, and use native <details> */
-.proj-details-mobile{
-  display: none;
-}
-
-/* ===== Mobile: stack card + show full media ===== */
-@media (max-width: 768px) {
-
-  .proj-top{
-    flex-direction: column !important;
-    gap: 12px !important;
-  }
-
+/* Mobile: stack, and show full video (no cropping) */
+@media (max-width: 768px){
+  .proj-top{ flex-direction: column; gap: 12px; }
 
   .proj-media-wrap{
-    width: 100% !important;
-    max-width: 100% !important;
-    aspect-ratio: auto !important;  
-    background: transparent !important;
-    overflow: hidden;             
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: auto;      /* let video decide height */
+    background: transparent;
   }
-
 
   .proj-media-wrap video,
   .proj-media-wrap img{
-    width: 100% !important;
-    height: auto !important;        
-    object-fit: contain !important;   
-    display: block;
+    height: auto;
+    object-fit: contain;     /* show full video on mobile */
+    border-radius: 14px;
+    background: #000;
   }
-
-
-  .proj-card{
-    padding: 14px !important;
-  }
-
-
-  .proj-meta{ min-width: 0 !important; }
 }
