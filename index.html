@@ -152,7 +152,12 @@
   </tr>
   </tbody></table> -->
 
-  <!-- Publication -->
+  <!-- =========================
+     Research Projects (FULL HTML BLOCK)
+     Paste this whole block into your HTML where the old projects table is.
+     Requires the CSS I gave you earlier (proj-card / proj-top / proj-media-wrap / etc.).
+     ========================= -->
+
 <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
   <tbody>
     <br>
@@ -160,45 +165,42 @@
     <br>
 
     <!-- =========================
-         Project 1: no media (full text, no collapse)
+         Project 1 (NO MEDIA) — show full content by default (no collapse)
          ========================= -->
     <tr class="proj-card-row">
-      <td colspan="2">
+      <td>
         <div class="proj-card">
-          <div class="proj-textonly-head">
-            <h3 class="proj-title">
-              <a href="" target="_blank">
-                <papertitle>Uncertainty-Aware MPPI Planning and Control for Robust Robotic Tasks</papertitle>
-              </a>
-            </h3>
-            <p class="proj-role">
-              <em><strong>Research Assistant at Figueroa Robotics Lab, advised by <b>Prof. Nadia Figueroa</b></strong></em>
-            </p>
-          </div>
+          <div class="proj-meta">
+            <a href="" target="_blank">
+              <papertitle class="proj-title">Uncertainty-Aware MPPI Planning and Control for Robust Robotic Tasks</papertitle>
+            </a>
+            <br>
+            <em><strong class="proj-role">Research Assistant at Figueroa Robotics Lab, advised by <b>Prof. Nadia Figueroa</b></strong></em>
 
-          <div class="proj-body-full">
-            <p>
-              1. Built an MPPI-based stochastic planning and control framework for online replanning and obstacle avoidance under perception uncertainty and environmental disturbances, optimized for real-time execution via parallel rollouts.
-              <br>
-              2. Integrated YOLO-based perception and injected detection uncertainty into MPPI instead of point estimates.
-              <br>
-              3. Modeled two complementary uncertainty sources to improve robustness and safety:<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;(i) <b>Spatial uncertainty</b>: modeled target position as a distribution to guide MPPI toward the belief, not a single detection;<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;(ii) <b>Detection confidence</b>: weighted the cost by YOLO confidence to avoid high-uncertainty regions.<br>
-              4. Added risk-averse and exploration costs to trade off safety and information gathering in uncertain environments.
-              <br>
-              5. Accelerated sampling and cost evaluation with JAX and maintained a stable 100 Hz control loop; experiments showed reliable planning and execution under glare/occlusion, missed detections, and increased noise, improving tracking accuracy and reducing failure rates.
-            </p>
+            <div class="proj-body" style="margin-top:10px;">
+              <p>
+                1. Built an MPPI-based stochastic planning and control framework for online replanning and obstacle avoidance under perception uncertainty and environmental disturbances, optimized for real-time execution via parallel rollouts.
+                <br>
+                2. Integrated YOLO-based perception and injected detection uncertainty into MPPI instead of point estimates.
+                <br>
+                3. Modeled two complementary uncertainty sources to improve robustness and safety:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(i) <b>Spatial uncertainty</b>: modeled target position as a distribution to guide MPPI toward the belief, not a single detection;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(ii) <b>Detection confidence</b>: weighted the cost by YOLO confidence to avoid high-uncertainty regions.<br>
+                4. Added risk-averse and exploration costs to trade off safety and information gathering in uncertain environments.
+                <br>
+                5. Accelerated sampling and cost evaluation with JAX and maintained a stable 100 Hz control loop; experiments showed reliable planning and execution under glare/occlusion, missed detections, and increased noise, improving tracking accuracy and reducing failure rates.
+              </p>
+            </div>
           </div>
         </div>
       </td>
     </tr>
 
     <!-- =========================
-         Project 3: pick_place video (collapsible details)
+         Project 3 (VIDEO)
          ========================= -->
     <tr class="proj-card-row">
-      <td colspan="2">
+      <td>
         <div class="proj-card">
           <div class="proj-top">
             <div class="proj-media-wrap">
@@ -209,15 +211,28 @@
             </div>
 
             <div class="proj-meta">
-              <h3 class="proj-title">
-                <a href="" target="_blank">
-                  <papertitle>Penn Robotics Pick-and-Place Challenge (Champion) — Dynamic Pick-and-Place Control System (Sep 2025 – Dec 2025)</papertitle>
-                </a>
-              </h3>
-              <p class="proj-role"><em><strong>Team Leader, Group Project</strong></em></p>
+              <a href="" target="_blank">
+                <papertitle class="proj-title">Penn Robotics Pick-and-Place Challenge (Champion) — Dynamic Pick-and-Place Control System (Sep 2025 – Dec 2025)</papertitle>
+              </a>
+              <br>
+              <em><strong class="proj-role">Team Leader, Group Project</strong></em>
 
+              <!-- preview always visible -->
+              <div class="proj-snippet">
+                <p>
+                  1. End-to-end Franka Panda pick-and-place with FK/Jacobian/IK for grasping and stacking.
+                  <br>
+                  2. AprilTag 6-DoF pose + calibrated camera–end-effector–base transforms with bias compensation.
+                  <br>
+                  3. Static grasping + dynamic capture strategies for robust targets.
+                  <br>
+                  4. ROS sim-to-real pipeline with RViz for debugging and deployment.
+                </p>
+              </div>
+
+              <!-- expand / collapse -->
               <details class="proj-details">
-                <summary>Details</summary>
+                <summary>More</summary>
                 <div class="proj-body">
                   <p>
                     1. Built an end-to-end pick-and-place system for a Franka Panda 7-DoF arm by deriving the kinematic model with DH parameters and implementing FK, Jacobian, and IK for autonomous grasping and stacking in a shared workspace.
@@ -240,10 +255,10 @@
     </tr>
 
     <!-- =========================
-         Project 6: juggling video (collapsible details)
+         Project 6 (VIDEO)
          ========================= -->
     <tr class="proj-card-row">
-      <td colspan="2">
+      <td>
         <div class="proj-card">
           <div class="proj-top">
             <div class="proj-media-wrap">
@@ -254,17 +269,24 @@
             </div>
 
             <div class="proj-meta">
-              <h3 class="proj-title">
-                <a href="" target="_blank">
-                  <papertitle>MPC-Based High-Speed Dynamic Juggling with a Franka Panda</papertitle>
-                </a>
-              </h3>
-              <p class="proj-role">
-                <em><strong>Control & Optimization Project, advised by <b>Prof. Michael Posa</b> (Sep 2025 – Dec 2025)</strong></em>
-              </p>
+              <a href="" target="_blank">
+                <papertitle class="proj-title">MPC-Based High-Speed Dynamic Juggling with a Franka Panda</papertitle>
+              </a>
+              <br>
+              <em><strong class="proj-role">Control & Optimization Project, advised by <b>Prof. Michael Posa</b> (Sep 2025 – Dec 2025)</strong></em>
+
+              <div class="proj-snippet">
+                <p>
+                  1. MuJoCo juggling simulation with ball flight prediction and contact modeling.
+                  <br>
+                  2. Three-layer stack: high-level timing/impact, mid-level IK + MPC, low-level torque tracking.
+                  <br>
+                  3. 100 Hz closed loop; stabilized ball into target region and sustained periodic juggling.
+                </p>
+              </div>
 
               <details class="proj-details">
-                <summary>Details</summary>
+                <summary>More</summary>
                 <div class="proj-body">
                   <p>
                     1. Built a MuJoCo simulation for high-speed Franka Panda juggling with ball flight prediction + contact modeling for capture and sustained juggling.
@@ -284,10 +306,10 @@
     </tr>
 
     <!-- =========================
-         Project 2: forklift video (collapsible details)
+         Project 2 (VIDEO) — forklift
          ========================= -->
     <tr class="proj-card-row">
-      <td colspan="2">
+      <td>
         <div class="proj-card">
           <div class="proj-top">
             <div class="proj-media-wrap">
@@ -298,17 +320,24 @@
             </div>
 
             <div class="proj-meta">
-              <h3 class="proj-title">
-                <a href="" target="_blank">
-                  <papertitle>Teleoperated Forklift System Integration</papertitle>
-                </a>
-              </h3>
-              <p class="proj-role">
-                <em><strong>Research Assistant at xLab, advised by <b>Prof. Rahul Mangharam</b></strong></em>
-              </p>
+              <a href="" target="_blank">
+                <papertitle class="proj-title">Teleoperated Forklift System Integration</papertitle>
+              </a>
+              <br>
+              <em><strong class="proj-role">Research Assistant at xLab, advised by <b>Prof. Rahul Mangharam</b></strong></em>
+
+              <div class="proj-snippet">
+                <p>
+                  1. CAN communication between Jetson and forklift for low-level control.
+                  <br>
+                  2. Bluetooth joystick interface mapped to driving, steering, and lifting commands.
+                  <br>
+                  3. Full remote teleoperation stack with stable perception camera setup.
+                </p>
+              </div>
 
               <details class="proj-details">
-                <summary>Details</summary>
+                <summary>More</summary>
                 <div class="proj-body">
                   <p>
                     1. Utilized the CAN protocol to establish communication between the Jetson and the forklift.
@@ -328,10 +357,10 @@
     </tr>
 
     <!-- =========================
-         Project 4: mobile_robot video (collapsible details)
+         Project 4 (VIDEO) — mobile_robot
          ========================= -->
     <tr class="proj-card-row">
-      <td colspan="2">
+      <td>
         <div class="proj-card">
           <div class="proj-top">
             <div class="proj-media-wrap">
@@ -342,15 +371,24 @@
             </div>
 
             <div class="proj-meta">
-              <h3 class="proj-title">
-                <a href="" target="_blank">
-                  <papertitle>Teleoperation Robot Design and Competition Project</papertitle>
-                </a>
-              </h3>
-              <p class="proj-role"><em><strong>Team Leader, Group Project</strong></em></p>
+              <a href="" target="_blank">
+                <papertitle class="proj-title">Teleoperation Robot Design and Competition Project</papertitle>
+              </a>
+              <br>
+              <em><strong class="proj-role">Team Leader, Group Project</strong></em>
+
+              <div class="proj-snippet">
+                <p>
+                  1. 3-DOF teleoperated robot with Itsy Bitsy + Arduino servo control.
+                  <br>
+                  2. Waldo system design for smooth teleoperation and custom firmware.
+                  <br>
+                  3. Full-stack mechanical, circuit, and software integration with multi-sensor feedback.
+                </p>
+              </div>
 
               <details class="proj-details">
-                <summary>Details</summary>
+                <summary>More</summary>
                 <div class="proj-body">
                   <p>
                     1. Developed a 3-DOF teleoperated robot using Itsy Bitsy and Arduino for precise servo control.
@@ -372,10 +410,10 @@
     </tr>
 
     <!-- =========================
-         Project 5: Odometry video (collapsible details)
+         Project 5 (VIDEO) — odometry
          ========================= -->
     <tr class="proj-card-row">
-      <td colspan="2">
+      <td>
         <div class="proj-card">
           <div class="proj-top">
             <div class="proj-media-wrap">
@@ -386,17 +424,24 @@
             </div>
 
             <div class="proj-meta">
-              <h3 class="proj-title">
-                <a href="" target="_blank">
-                  <papertitle>Multi-Sensor Fusion Odometry on Uneven Terrain</papertitle>
-                </a>
-              </h3>
-              <p class="proj-role">
-                <em><strong>Research Assistant at UNNC, advised by <b>Prof. Adam Rushworth</b></strong></em>
-              </p>
+              <a href="" target="_blank">
+                <papertitle class="proj-title">Multi-Sensor Fusion Odometry on Uneven Terrain</papertitle>
+              </a>
+              <br>
+              <em><strong class="proj-role">Research Assistant at UNNC, advised by <b>Prof. Adam Rushworth</b></strong></em>
+
+              <div class="proj-snippet">
+                <p>
+                  1. Robust odometry for uneven terrain to reduce vibration/slip drift.
+                  <br>
+                  2. LiDAR + camera + IMU fusion with Kalman filtering for localization accuracy.
+                  <br>
+                  3. AprilTag-based pose as external reference for calibration and benchmarking.
+                </p>
+              </div>
 
               <details class="proj-details">
-                <summary>Details</summary>
+                <summary>More</summary>
                 <div class="proj-body">
                   <p>
                     1. Designed a robust odometry pipeline for wheeled robots on uneven terrain to mitigate vibration- and slip-induced drift.
